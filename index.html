@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《瘴气营地的青春性事与死亡》外网评论辑 · Teenage Sex and Death at Camp Miasma</title>
+<style>
+  :root{
+    --bg:#0c0a0e;
+    --bg2:#151019;
+    --card:#1a1420;
+    --card2:#211826;
+    --ink:#ece6ee;
+    --muted:#a99fb0;
+    --line:#332838;
+    --blood:#e11d3a;
+    --blood2:#ff5a72;
+    --jelly:#46d6a8;
+    --gold:#f4c95d;
+    --purple:#b98cff;
+    --teal:#5fd0d6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.85;font-size:16px;
+  }
+  a{color:var(--blood2);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px;}
+
+  /* HERO */
+  header.hero{
+    background:
+      radial-gradient(1200px 500px at 20% -10%, rgba(225,29,58,.35), transparent 60%),
+      radial-gradient(900px 400px at 100% 0%, rgba(70,214,168,.18), transparent 55%),
+      linear-gradient(180deg,#0a070c,#120c16);
+    border-bottom:1px solid var(--line);
+    padding:64px 20px 48px;
+    text-align:center;
+  }
+  .kicker{letter-spacing:.35em;font-size:12px;color:var(--blood2);text-transform:uppercase;margin-bottom:14px;}
+  h1.title{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:clamp(30px,5vw,52px);margin:0 0 6px;line-height:1.15;}
+  .subtitle{font-style:italic;color:var(--muted);font-family:Georgia,serif;font-size:clamp(15px,2.4vw,20px);margin:0 0 18px;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px;}
+  .chip{font-size:12.5px;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:5px 12px;border-radius:999px;color:var(--muted);}
+  .chip b{color:var(--ink);font-weight:600;}
+  .synopsis{max-width:760px;margin:26px auto 0;text-align:left;color:#d7ccdd;font-size:15.5px;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:14px;padding:18px 22px;}
+
+  /* STATS */
+  .stats{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:34px 0 8px;}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;min-width:150px;text-align:center;}
+  .stat .num{font-size:28px;font-weight:800;color:var(--blood2);font-family:Georgia,serif;}
+  .stat .lab{font-size:12.5px;color:var(--muted);margin-top:4px;}
+
+  /* CONTROLS */
+  .controls{position:sticky;top:0;z-index:20;background:rgba(12,10,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 0;margin-bottom:30px;}
+  .controls-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;}
+  .ctrl-group{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .ctrl-label{font-size:12px;color:var(--muted);margin-right:4px;}
+  button.tab,.filter-btn{
+    font:inherit;font-size:13px;cursor:pointer;color:var(--muted);
+    background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 14px;transition:.15s;
+  }
+  button.tab:hover,.filter-btn:hover{color:var(--ink);border-color:var(--blood2);}
+  button.tab.active{background:var(--blood);border-color:var(--blood);color:#fff;}
+  .filter-btn.active{background:var(--jelly);border-color:var(--jelly);color:#06231a;font-weight:600;}
+
+  /* REVIEW CARD */
+  .review{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:18px;margin:0 0 26px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35);}
+  .review.hide{display:none;}
+  .r-head{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between;}
+  .r-pub{font-family:Georgia,serif;font-size:21px;font-weight:700;color:#fff;margin:0;}
+  .r-sub{font-size:13px;color:var(--muted);margin-top:3px;}
+  .r-sub .author{color:var(--gold);}
+  .r-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+  .r-rating{font-weight:800;font-size:15px;color:var(--gold);font-family:Georgia,serif;}
+  .stance{font-size:11.5px;padding:3px 11px;border-radius:999px;font-weight:600;letter-spacing:.04em;}
+  .stance.praise{background:rgba(225,29,58,.16);color:var(--blood2);border:1px solid rgba(225,29,58,.4);}
+  .stance.analysis{background:rgba(185,140,255,.16);color:var(--purple);border:1px solid rgba(185,140,255,.4);}
+  .stance.critique{background:rgba(95,208,214,.14);color:var(--teal);border:1px solid rgba(95,208,214,.4);}
+  .r-orig-title{font-style:italic;color:var(--muted);font-size:13.5px;margin:0 0 2px;}
+  .r-body{padding:8px 24px 22px;}
+  .toggles{display:flex;gap:6px;margin:6px 0 14px;flex-wrap:wrap;}
+  .toggles button{font:inherit;font-size:12px;cursor:pointer;color:var(--muted);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:4px 12px;}
+  .toggles button.on{color:#fff;border-color:var(--blood2);background:rgba(225,29,58,.18);}
+  .translation{color:#f1ebf3;}
+  .translation p{margin:0 0 14px;}
+  .translation h4{color:var(--jelly);font-size:14px;letter-spacing:.03em;margin:18px 0 8px;text-transform:uppercase;}
+  .original{display:none;border-top:1px dashed var(--line);margin-top:8px;padding-top:14px;color:#c9bdcf;font-size:14.5px;}
+  /* 阅读模式：view-zh(默认) / view-en / view-both */
+  .review.view-en .translation{display:none;}
+  .review.view-en .original{display:block;}
+  .review.view-both .original{display:block;}
+  .review.view-zh .original{display:none;}
+  .original p{margin:0 0 12px;}
+  .note{background:rgba(244,201,93,.08);border:1px solid rgba(244,201,93,.3);border-radius:10px;padding:10px 14px;font-size:13px;color:#e9d9a8;margin:0 0 14px;}
+
+  /* QUOTES */
+  .quotes{margin-top:46px;}
+  .quotes h2,.method h2{font-family:Georgia,serif;font-size:26px;color:#fff;margin:0 0 18px;border-left:4px solid var(--blood);padding-left:12px;}
+  .qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+  .qcard .q{font-family:Georgia,serif;font-size:15px;color:#e7dfea;font-style:italic;}
+  .qcard .src{font-size:12.5px;color:var(--gold);margin-top:10px;}
+  .qcard .src b{color:var(--ink);}
+
+  .method{margin-top:46px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
+  .method p{color:#cfc4d6;font-size:14.5px;margin:0 0 12px;}
+  .method ul{margin:0;padding-left:20px;color:#cfc4d6;font-size:14px;}
+  .method li{margin-bottom:7px;}
+
+  footer{border-top:1px solid var(--line);margin-top:50px;padding-top:22px;color:var(--muted);font-size:12.5px;}
+  footer a{color:var(--teal);}
+
+  @media(max-width:640px){
+    .r-head{flex-direction:column;}
+    .r-right{align-items:flex-start;}
+  }
+
+  /* ===== 专有名词注释：右上角角标 + 点击弹出小框 ===== */
+  .anno{position:relative;color:var(--gold);border-bottom:1px dotted var(--gold);cursor:help;transition:color .15s;}
+  .anno:hover{color:#fff;}
+  .anno.open{color:#fff;}
+  .anno-badge{position:absolute;top:-0.62em;right:-1.18em;font-size:9px;line-height:1;width:1.35em;height:1.35em;border-radius:50%;background:var(--gold);color:#1a1420;display:inline-flex;align-items:center;justify-content:center;font-weight:700;pointer-events:none;letter-spacing:0;}
+  .orig-link{font-size:12.5px;background:rgba(225,29,58,.14);border:1px solid rgba(225,29,58,.4);padding:1px 9px;border-radius:999px;margin-left:4px;white-space:nowrap;}
+  .orig-link:hover{background:rgba(225,29,58,.28);text-decoration:none;}
+  #annoPop{display:none;position:fixed;z-index:300;max-width:330px;width:max-content;background:var(--card2);border:1px solid var(--gold);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.72;color:#ece6ee;box-shadow:0 16px 44px rgba(0,0,0,.6);}
+  #annoPop .at{display:block;font-size:11px;color:var(--muted);margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase;}
+  #annoPop b{color:var(--blood2);}
+  #annoPop .src{display:block;margin-top:7px;font-size:11.5px;color:var(--jelly);}
+</style>
+</head>
+<body>
+
+<div id="annoPop"></div>
+
+<header class="hero">
+  <div class="kicker">外网影评辑 · 学术与权威视角</div>
+  <h1 class="title">瘴气营地的青春性事与死亡</h1>
+  <div class="subtitle">Teenage Sex and Death at Camp Miasma (2026)</div>
+  <div class="meta-row">
+    <span class="chip">导演/编剧 <b>简·申布伦 Jane Schoenbrun</b></span>
+    <span class="chip">主演 <b>汉娜·爱宾德 / 吉莲·安德森</b></span>
+    <span class="chip">类型 <b>恐怖 · 喜剧 · 酷儿</b></span>
+    <span class="chip">片长 <b>112 分钟</b></span>
+    <span class="chip">发行 <b>MUBI / Plan B</b></span>
+    <span class="chip">戛纳 <b>酷儿棕榈奖</b></span>
+  </div>
+  <div class="synopsis">
+    一个虚构的 1980 年代砍杀片系列《瘴气营地》(Camp Miasma) 在连拍烂续集后口碑崩盘，片方找来酷儿青年导演克里丝 (Kris) 重启这个 IP。她从小痴迷该片，执意寻访原版"最终女孩"比利 (Billy)——由隐居在废弃拍摄营地的过气女星出演。当两位女性重看旧作、边界在欲望与谵妄中瓦解，"小死亡"(Little Death) 这个蒙面杀人魔从湖底渗入真实世界。影片以复古血浆片外壳，犀利解构恐怖类型、青春情欲与酷儿叙事，被评论界视为申布伦"媒介三部曲"的收官之作。
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stats">
+    <div class="stat"><div class="num">94%</div><div class="lab">烂番茄新鲜度（278 评）</div></div>
+    <div class="stat"><div class="num">89</div><div class="lab">Metacritic（48 评 · 零负评）</div></div>
+    <div class="stat"><div class="num">6 分钟</div><div class="lab">戛纳首映起立鼓掌</div></div>
+    <div class="stat"><div class="num">9 篇</div><div class="lab">全文译介评论</div></div>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="ctrl-group">
+        <span class="ctrl-label">阅读模式</span>
+        <button class="tab active" data-view="zh">译文优先</button>
+        <button class="tab" data-view="en">英文原文</button>
+        <button class="tab" data-view="both">中英对照</button>
+        <button class="tab" id="toggleAll">展开全部原文</button>
+      </div>
+      <div class="ctrl-group">
+        <span class="ctrl-label">立场</span>
+        <button class="filter-btn active" data-stance="all">全部</button>
+        <button class="filter-btn" data-stance="praise">赞誉</button>
+        <button class="filter-btn" data-stance="analysis">学术/分析</button>
+        <button class="filter-btn" data-stance="critique">批评</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ REVIEW 1: THE GUARDIAN ============ -->
+  <article class="review" data-stance="praise">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"Teenage Sex and Death at Camp Miasma review – Gillian Anderson superb in queer slasher spectacular"</p>
+        <h3 class="r-pub">《卫报》The Guardian</h3>
+        <div class="r-sub">作者 <span class="author">Peter Bradshaw</span> · 2026 年 5 月 14 日 · 评级 ★★★★★ · <a class="orig-link" href="https://www.theguardian.com/film/2026/may/14/teenage-sex-and-death-at-camp-miasma-review-seductive-gillian-anderson-fulfils-a-rapturous-slasher-fan-obsession" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">5 / 5</span>
+        <span class="stance praise">赞誉 · 狂喜</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>年轻独立导演<span class="anno">克里丝<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中青年导演 Kris，由汉娜·爱宾德(Hannah Einbinder)饰演；从小痴迷《瘴气营地》，被片方聘来重启这一 IP。</span></span>为了重拍一部备受喜爱的恐怖片，追踪到了片中的"<span class="anno">最终女孩<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Final Girl，砍杀片套路中最后幸存、常与杀手正面交锋的女性角色原型，本片中由比利出演。</span></span>"——却发现幻想与现实已然坍缩。彼得·布拉德肖撰文。</p>
+        <p><span class="anno">简·申布伦<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国跨性别电影人、编剧、导演，本片编导。以《我们都要去世界的尽头》(2021)、《荧屏在发光》(2024) 与《瘴气营地》(2026) 组成「媒介三部曲」，主题围绕身份、媒介与酷儿体验。</span></span>再次奉献了一场令人极度愉悦的演出：关于蜕变式狂喜与臣服式迷醉，把我们领进一场怪诞的流行文化黑弥撒，里面全是被笃信不疑的垃圾与癖好。一如<span class="anno">申布伦<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Jane Schoenbrun，美国跨性别导演／编剧，「媒介三部曲」(《我们都要去世界的尽头》《荧屏在发光》《瘴气营地》)的作者。</span></span>之前的作品，我忍不住想起<span class="anno">戈尔·维达尔<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Gore Vidal(1925–2012)，美国作家、公共知识分子，以犀利讥讽与戏仿著称。</span></span>（眼下已不时兴的）小说<span class="anno">《迈拉·布莱金里奇》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Myra Breckinridge，戈尔·维达尔 1968 年小说(1970 年改编电影)，以性别倒置与对好莱坞的戏仿闻名。</span></span>与《迈伦》。这部电影竟能让你信服：1980 年代的<span class="anno">砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Slasher，以面具杀手连环屠杀青年为主角的恐怖亚类型，1980 年代随《十三号星期五》《月光光心慌慌》等兴盛。</span></span>类型，是一种令人振奋、具有解放性乃至进步意味的体验。</p>
+        <p>和<span class="anno">《我们都要去世界的尽头》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">申布伦 2021 年长片 We're All Going to the World's Fair，讲述网络游戏引发的身份迷失，是其「媒介三部曲」第一部。</span></span>（2021）与<span class="anno">《荧屏在发光》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">申布伦 2024 年长片 I Saw the TV Glow，关于电视、性别与现实的邪典之作，「媒介三部曲」第二部。</span></span>（2024）一样，申布伦再次玩成了那一手把戏：凭空发明一种虚构的媒介现象，并以彻头彻尾的粉丝式认真去对待它——前两部是网络游戏与<span class="anno">邪典<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Cult，指拥有狂热小众粉丝群、常被主流忽视的作品或导演风格；申布伦常被归入邪典作者。</span></span>惊悚剧集，这一部则是一个名为<span class="anno">《瘴气营地》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中虚构的 1980 年代砍杀片系列 Camp Miasma，本片故事围绕其重启展开，是「戏中戏」核心 IP。</span></span>的<span class="anno">砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Slasher，以面具杀手连环屠杀青年为主角的恐怖亚类型，1980 年代随《十三号星期五》《月光光心慌慌》等兴盛。</span></span>系列，主角是个叫"<span class="anno">小死亡<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中蒙面杀手 Little Death。「la petite mort」(法文「小死亡」)是性高潮的委婉语，与片名中的「性事与死亡」形成双关。</span></span>"的<span class="anno">跨性别<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Transgender，性别认同与出生指定性别不一致；申布伦以跨性别视角重构砍杀类型。</span></span>少年杀手，戴着天花板通风口当面具（缘由始终未解释），周期性地从夏令营的湖里冒出来，把衣衫单薄的年轻人用长矛残忍刺穿。</p>
+        <p>开场字幕俏皮地领我们走过这个系列起初的爆红与后来几部的滑坡、周边与电子游戏，以及那套令人受不了的、关于它"问题重重"的性别议题的文化研究话语。如今，年轻的独立导演克里丝（汉娜·爱宾德饰）受雇执导一部利润丰厚的<span class="anno">《瘴气营地》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中虚构的 1980 年代砍杀片系列 Camp Miasma，本片故事围绕其重启展开，是「戏中戏」核心 IP。</span></span>起源故事重启版——对她而言是美差，因为她八岁起就偷偷看第一部，被"<span class="anno">最终女孩<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Final Girl，砍杀片套路中最后幸存、常与杀手正面交锋的女性角色原型，本片中由比利出演。</span></span>"濒死的危险所震慑，那种她至今无法理解、却在杀手视角里同时体会到的感受，是她在性事上那些不快乐、痛苦的经历从未给过的。</p>
+        <p>现在她必须说服第一部里那位标志性的"最终女孩"出演——那位演完便退出影坛、再未接演任何续集或任何电影，像<span class="anno">诺玛·戴斯蒙德<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Norma Desmond，电影《日落大道》中过气默片女星，常被用来比喻隐居、沉迷昔日荣光的过气明星。</span></span>或一位极度自持的<span class="anno">谢莉·杜瓦勒<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Shelley Duvall(1950–2024)，美国女演员，以《闪灵》等著称；此处喻指隐居、传奇而脆弱的女明星形象。</span></span>般的隐士。她就是<span class="anno">比利·普雷斯利<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中初代「最终女孩」比利(Billy)，由吉莲·安德森(Gillian Anderson)饰演；拒演续集后隐居在废弃拍摄营地。</span></span>，一个垃圾食品、零食与性幻想的鉴赏家，由吉莲·安德森以风趣格调与温润性感演绎。克里丝必须亲自登门游说，却错愕地发现对方竟真住在当年外景地那座废弃夏令营里，并在其中搭了一间迷你放映室，反复观看自己那部电影的 35 毫米拷贝。<span class="anno">比利<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中初代「最终女孩」比利(Billy Presley)，由吉莲·安德森饰演，是《瘴气营地》原作的象征性人物。</span></span>优雅而迷人的做派，既困扰又挑动着可怜的克里丝。</p>
+        <p>至于比利，她对克里丝认真描述自己的<span class="anno">酷儿<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Queer，泛指非异性恋规范的身份与欲望；本片从酷儿视角重读砍杀类型与青春情欲。</span></span>多角关系感到好笑，但当克里丝搬出<span class="anno">朱迪斯·巴特勒<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Judith Butler，美国性别研究学者，提出「性别表演性」(gender performativity)理论，认为性别是通过反复行为「表演」出来的社会建构，而非天生本质。</span></span>、大谈要" reclaim（重夺）"《瘴气营地》时，她则困惑而恼火。两人一起看片时，比利纵容克里丝对着一个绝妙的"<span class="anno">分焦镜头<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Split diopter，电影摄影技巧：利用半透镜让前景与背景同时保持清晰焦点，常用于制造张力；布莱恩·德·帕尔玛尤为善用。</span></span>"画面兴奋点评——前景与背景的面孔同处梦境般的清晰焦点，一如<span class="anno">布莱恩·德·帕尔玛<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Brian De Palma，美国导演，以《魔女嘉莉》《凶线》等及擅用分焦镜头、窥视视角闻名。</span></span><span class="anno">《魔女嘉莉》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Carrie，德·帕尔玛 1976 年恐怖片，改编自斯蒂芬·金小说，是分焦镜头经典用例之一。</span></span>中的处理——而事实上，申布伦自己在结尾也给了我们一个<span class="anno">分焦镜头<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Split diopter，电影摄影技巧：利用半透镜让前景与背景同时保持清晰焦点，常用于制造张力；布莱恩·德·帕尔玛尤为善用。</span></span>。但比利于《瘴气营地》中拍摄失贞一幕时，有某种可怕或美妙的事要揭示，克里丝于是确信：她们二人在这营地中并非独处。比利在暗中同某个人说话。那个人，会不会就住在湖底？那个戴着方形通风口面具的杀手，是否相当于<span class="anno">《日落大道》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Sunset Boulevard，比利·怀尔德 1950 年黑色电影，讲述过气默片明星的悲剧，是好莱坞隐喻的经典来源。</span></span>里<span class="anno">埃里克·冯·施特罗海姆<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Erich von Stroheim(1885–1957)，奥地利裔导演／演员，在《日落大道》中饰演忠仆 Max，是「戏中戏／隐士」隐喻的参照。</span></span>饰演的管家？《瘴气营地》……（ gulp）……是真的吗？</p>
+        <p>也许，重点正在于：它以"解放性、逃避性的幻想是真实的"这种意义而真实——以一种平庸现实所不具备的真实。又或许，真实就驻留在"真实"与"非真实"之别的坍缩之中。《瘴气营地》古怪而 eccentric，却被以投入乃至激情完成了。本片于<span class="anno">戛纳电影节<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Cannes Film Festival，全球最重要电影节之一；本片在第 79 届「一种关注」单元开幕并获酷儿棕榈奖。</span></span>展映，8 月 21 日起登陆英国与爱尔兰院线。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>Young indie film-maker Kris tracks down Anderson's <span class="anno">Final Girl<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">砍杀片术语，指系列中幸存至终、常与杀手对峙的女性角色，本片初代由比利饰演。</span></span> for a remake of a beloved horror, to find fantasy and reality collapsed. Peter Bradshaw.</p>
+        <p>Jane Schoenbrun unveils a very enjoyable display of transformative ecstasy and submissive rapture, treating us to a bizarre pop-cultural black mass of fiercely believed-in trash and kink. As before with Schoenbrun's films, I found myself thinking of Gore Vidal's (unfashionable) novels Myra Breckinridge and Myron. This is a film that somehow persuades you that the 80s <span class="anno">slasher<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">砍杀片，1980 年代兴盛的恐怖亚类型，以面具杀手连环屠杀青年为特征。</span></span> genre is an exalting and liberatingly progressive experience.</p>
+        <p>As before, in their We're All Going to the World's Fair (2021) and I Saw the TV Glow (2024), Schoenbrun pulls off the trick of inventing an imaginary media phenomenon and treating it with complete fan-seriousness – an online horror game and <span class="anno">cult<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">邪典，指拥有狂热小众粉丝群、常被主流忽视的作品或作者。</span></span> scary TV show in the first two films and now a <span class="anno">slasher<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">砍杀片，1980 年代兴盛的恐怖亚类型，以面具杀手连环屠杀青年为特征。</span></span> movie franchise called <span class="anno">Camp Miasma<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">影片虚构的砍杀片系列《瘴气营地》的英文原名。</span></span> about a teen <span class="anno">transgender<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">跨性别，性别认同与出生指定性别不一致。</span></span> killer called <span class="anno">Little Death<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中杀手名，源自法文「la petite mort」(字面「小死亡」)，是性高潮的委婉说法，呼应片名主题。</span></span> wearing a ceiling vent as a mask (why is never explained) who periodically emerges from a lake in a sleepaway camp where scantily clad young people will be brutally speared.</p>
+        <p>The opening credits wittily walk us through the franchise's initial wild success and slump in the later movies, the merch and the video games and the insufferable cultural studies discourse about its "problematic" treatment of gender. Now young indie film-maker Kris (Hannah Einbinder) has been hired to direct a lucrative origin-story reboot of <span class="anno">Camp Miasma<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">影片虚构的砍杀片系列《瘴气营地》的英文原名。</span></span>, a dream job as she has been obsessed with this series since illicitly watching the first movie at the age of eight, thrilled by feelings she still can't understand by the <span class="anno">Final Girl<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">砍杀片术语，指系列中幸存至终、常与杀手对峙的女性角色，本片初代由比利饰演。</span></span>'s mortal jeopardy, preparing to die while somehow experiencing the killer's point-of-view: feelings that Kris's unhappy, painful experiences with sex have never equalled.</p>
+        <p>Now she has to persuade that iconic Final Girl from the first film to be in it – the star who quit after that and never acted in any subsequent episode or any film at all, a recluse like Norma Desmond or a very self-possessed Shelley Duvall. She is Billy Presley, a worldly connoisseur of junk food, snacks and sex fantasy, played with droll style and soignée sexiness by Gillian Anderson. Kris has to visit Billy in person to make her pitch and is disconcerted to discover that she actually lives in the remote disused sleepaway camp that was used as a location for the first film, in which she has built a mini screening room for repeatedly watching a 35mm print of her film. Billy's elegant, seductive manner disturbs and yet excites poor Kris.</p>
+        <p>As for Billy, she is amused at Kris's earnest description of her <span class="anno">queer<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">酷儿，泛指非异性恋规范的身份与欲望；本片以酷儿视角重读类型片。</span></span> polyamory but baffled and irritated when Kris invokes Judith Butler in talking about her plans to reclaim Camp Miasma. When they sit down to watch the film together, Billy indulges Kris's excitable comments on a great "<span class="anno">split diopter<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">分焦镜头，一种让画面前景与背景同时保持清晰焦点的摄影技法，常用于制造视觉张力。</span></span>" shot – foreground and background faces in equal dreamlike sharp focus as in Brian de Palma's Carrie – and in fact Schoenbrun gives us a <span class="anno">split diopter<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">分焦镜头，一种让画面前景与背景同时保持清晰焦点的摄影技法，常用于制造视觉张力。</span></span> shot of her own at the end. But Billy has something terrible or wonderful to reveal about shooting the virginity loss scene in Camp Miasma and Kris becomes convinced that the two of them are not alone in this camp. Billy is secretly talking to someone. Could that someone be living at the bottom of the lake? Is the slasher in the square ceiling vent mask the equivalent of Erich von Stroheim's butler in Sunset Boulevard? Is Camp Miasma … gulp … real? Well, perhaps the point is that it's real in the sense that liberating, escapist fantasy is real – real in the way that boring reality isn't real. Or perhaps the reality resides in collapsing the distinction between real and unreal. Camp Miasma is strange and eccentric, but carried off with commitment and even passion. Teenage Sex and Death at Camp Miasma screened at the <span class="anno">Cannes<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">戛纳电影节，本片在此展映并获酷儿棕榈奖。</span></span> film festival and is in UK and Irish cinemas from 21 August.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 2: VARIETY ============ -->
+  <article class="review" data-stance="praise">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"'Teenage Sex and Death at Camp Miasma' Review: Gillian Anderson and Hannah Einbinder Serve in Jane Schoenbrun's Delicious Slasher Homage"</p>
+        <h3 class="r-pub">《综艺》Variety</h3>
+        <div class="r-sub">作者 <span class="author">Jessica Kiang</span> · 2026 年 5 月 13 日 · 影评人精选 · <a class="orig-link" href="https://variety.com/2026/film/reviews/teenage-sex-and-death-at-camp-miasma-review-1236747126" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">Critics' Pick</span>
+        <span class="stance praise">赞誉 · 盛赞</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>申布伦的第三部长片，把录像带劣作 (<span class="anno">video nasty<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">1980 年代英国对一批廉价暴力恐怖录像带的贬称，指低预算、剥削性质的恐怖片。</span></span>) 那种廉价的快感，重新利用成一篇关于流行文化凝视之权力的元理论——被<span class="anno">酷儿<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Queer，泛指非异性恋规范的身份与欲望；本片从酷儿视角重读砍杀类型与青春情欲。</span></span>化、被南方油炸、再蘸进一层油滑而自觉好玩的酱汁里。</p>
+        <p>如果说简·申布伦感受到了作为同代人中最具知名度的<span class="anno">跨性别<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Transgender，性别认同与出生指定性别不一致；申布伦以跨性别视角重构砍杀类型。</span></span>电影人的压力，那它也只以一种最令人愉悦的、带反抗意味的方式，出现在"<span class="anno">一种关注<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Un Certain Regard，戛纳电影节的平行竞赛单元，本片为其开幕片。</span></span>"单元开幕片《瘴气营地的青春性事与死亡》之中。这是一锅滚烫的性、死亡、VHS 与垃圾食品的炖煮，仿佛由爱神厄洛斯、死神塔纳托斯、<span class="anno">肯德基上校<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Colonel Sanders，肯德基(KFC)创始人哈兰·山德士的卡通形象；片中作为「欲望／死亡」拼贴的戏谑元素。</span></span>与 Jolly Rancher 糖果在<span class="anno">百视达<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Blockbuster Video，已倒闭的美国录像带租赁连锁，是 1980–90 年代家庭观影文化的象征。</span></span>录像店最肮脏的角落里共同炮制；申布伦这部令人晕眩的第三作，是他们迄今最成熟、最有说服力、也最会玩的一部。在这里，导演关于性别身份与认同的恒久命题，被升华成一次对砍杀类型的致敬，同时亦是对女性欲望那常常"被搞坏"的本质的一次探索，以及一份"允许自己去感受它"的宣言。</p>
+        <p>编导申布伦还把这部电影设计成一句俏皮的、关于好莱坞制片机制的元内部笑话，这一点由那段夸张到爆的开场字幕序列充分证明。由 Mila Matveeva 设计，它带我们走遍虚构的"瘴气营地"恐怖系列的兴衰史：一个挥舞长矛、性别流动的杀手，在森林密布的湖畔夏令营里恐吓"年轻而鲜嫩"的访客。一长串 VHS 封面、营销物料、周边授权、下滑的票房报告，以及——不可避免地——一波要么细数该系列恐同与恐跨、要么试图 reclaim 它的博客。</p>
+        <p>与此同时，一段奇异而合成感十足、反旋律的 <span class="anno">R.E.M.<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国摇滚乐队(1980–2011)，另类摇滚代表；其《Nightswimming》在片中被用作反旋律翻唱。</span></span>《Nightswimming》翻唱响起——这种对位式的音乐剪辑是一种恒定的、媚俗的快感，尤其当原版影片那场血腥高潮被 <span class="anno">Counting Crows<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国摇滚乐队，其《Long December》作为「时代错位」的配乐出现在片中的血腥高潮段落。</span></span> 的《Long December》伴奏时，那次插曲既好笑又错得离谱（时代错位）。字幕最后定格在导演克里丝（汉娜·爱宾德饰）——那位被钦点来执掌系列重启的"<span class="anno">圣丹斯<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Sundance，圣丹斯电影节，美国独立电影最重要阵地；申布伦前两部长片均在此首映。</span></span>神童"——的画像上。以防类比还不够明显（申布伦此前的两部<span class="anno">《我们都要去世界的尽头》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">申布伦 2021 年长片 We're All Going to the World's Fair，讲述网络游戏引发的身份迷失，是其「媒介三部曲」第一部。</span></span>与<span class="anno">《荧屏在发光》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">申布伦 2024 年长片 I Saw the TV Glow，关于电视、性别与现实的邪典之作，「媒介三部曲」第二部。</span></span>都在<span class="anno">圣丹斯<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Sundance，圣丹斯电影节，美国独立电影最重要阵地；申布伦前两部长片均在此首映。</span></span>获誉首映），导演的名字就在此时出现。</p>
+        <p>克里丝正要去见比利·普雷斯利（过去由微微发颤的 Amanda Fix 饰演，现在由丝滑、令人垂涎的吉莲·安德森饰演）——初代《瘴气营地》的女星。比利拒绝回归任何一部愈发遭人嘲笑的续集，如今半隐居在影片当年的拍摄地。两位女性都否认这把比利变成某种"<span class="anno">《日落大道》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Sunset Boulevard，比利·怀尔德 1950 年黑色电影，讲述过气默片明星的悲剧，是好莱坞隐喻的经典来源。</span></span>里的<span class="anno">诺玛·戴斯蒙德<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Norma Desmond，电影《日落大道》中过气默片女星，常被用来比喻隐居、沉迷昔日荣光的过气明星。</span></span>"，但她确实流露出对头巾的偏爱，以及从阴影中戏剧性地现身、浓妆艳抹、永远准备好给自己的特写。</p>
+        <p>安德森与爱宾德（在凭 HBO<span class="anno">《绝望写手》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Hacks，HBO 喜剧剧集(2021—)，汉娜·爱宾德凭此获艾美奖而走红。</span></span>突破获奖后的首部电影长片）都状态绝佳。但前者那自觉地标榜为经典的比利，攫取了大部分可做成梗的瞬间——比如，她像舔手指般吐出那句台词，转身把一盘堆满肯德基的托盘递向克里丝，用辨不出来处的南方口音拖长声调："你……喜欢蘸酱吗？"</p>
+        <p>安德森似乎极享受这次杀入女同<span class="anno">高 camp<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">High camp，一种刻意夸张、戏谑、反讽的审美姿态，常与酷儿文化相连；片中比利的表演即被形容为女同高 camp。</span></span> 的尝试，配角阵容里也点缀着同样投入的表演者：从 Eva Victor 的朋克 DJ，到 Dylan Baker 那叫人受不了的片厂高管，再到克里丝的恋人 Mari（Jasmin Savoy Brown）和 Mari 那个蠢笨的炮友 Thor（Aren Buchholz）。但这里镜头前后每个人都看起来玩得很开心，这让气氛始终轻盈弹跳，无论此刻多么血腥、喷溅或主题缠绕。</p>
+        <p>美术指导 Brandon Tonner-Connolly 与 Matt Hyland 被彻底放开，接连奉上风格化内景与艳俗的人造背景——画上去的厚雪压在冷杉枝头，底下是桃紫色的暮空。太阳和月亮本身，似乎只放射出近来被戏称为"<span class="anno">双性恋灯光<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Bisexual lighting，近年影视中常见的蓝—粉—紫渐变打光，因常被联想为双性恋象征而被戏称为「双性恋灯光」。</span></span>"的蓝粉色调；而当 <span class="anno">Alex G<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国音乐人 Alex G(1993—)，负责本片配乐，风格受 1980 年代影响。</span></span> 受 1980 年代影响的配乐在背景盘旋时，摄影指导 Eric K. Yue 也玩心大起地实验着对砍杀传统的其他视觉致敬：急推镜头、摇晃的 POV 摄影机、反复出现的眼球母题与分焦镜头——连克里丝都兴奋地指着喊："分焦镜头！"</p>
+        <p>克里丝毕竟是个电影呆子，无法停止把自己所爱之物、以及自己有时不那么体面地爱上它们的理由， Intellectualize（理智化）到足以去"拍"它们的程度——正如她关键的性心理障碍，竟是无法全然臣服于那些令她羞耻、却或许恰恰能让她高潮的幻想。在后半段——它用砍杀惯例的傻气抵达了相当深邃之处——性困惑与性欲失调（尤其作为女性所体验到的那种）的主题，从各种被斩首者的脖颈喷涌的鲜血喷泉背后浮现，成为全片最动人的一条线索。</p>
+        <p>但一位五十多岁的女演员和比她小二十岁的导演，能彼此教会什么？起初，这对代际世界观的互不理解被当作笑料。"什么是多角？"比利问；克里丝最终只得承认，是的，它有点像出轨，只是"还要加上必须和叫 Thor 的双性恋男生一起玩桌游的聚会之夜"。但随着羁绊加深，电影切近了情感的骨头。一次笨拙的亲密之后，克里丝羞愧地蜷缩起来，低语："我真的太不会做爱了"；后来比利讲述自己失去童贞，发现"和它一直以来我想的那么糟，一模一样"。在罕见地坦承女性性无能之后，年长而世故的女子，将年轻而缺乏安全感的那位，引领进对自身欲望那套秘传的接纳之中。高潮，与鲜血的喷泉，接踵而至。</p>
+        <p>在一则关于两种通常被认为互不相容的代际世界观的爱情故事里，申布伦得以把这段核心关系描绘成一个幻想的安全港，缀以 Raisinets 葡萄干糖与爆米花；在这里，没有人会因自己脑中那些唤起兴奋的东西——那些厌女、恐跨，或其他现实中的问题——而受审判。克里丝口口声声说，她要"在好莱坞自己的游戏里打败它"，这回响着此前上百个独立导演的失败。也许，在把跨性别寓言、窥视理论、亲 kink 女性主义与越界幻想角色扮演，统统走私进一颗关于"翻拍一部关于头上顶着盒子的变态连环杀手的电影"的糖纸里时，简·申布伦真的做到了。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>Schoenbrun's third feature repurposes the pulpy pleasures of the <span class="anno">video nasty<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">1980 年代英国对一批廉价暴力恐怖录像带的贬称，指低预算、剥削性质的恐怖片。</span></span> into a meta-thesis on the power of the pop-cultural gaze, queered, southern-fried and dunked in a dipping sauce of schlocky, self-aware fun.</p>
+        <p>If Jane Schoenbrun is feeling the pressures of being their generation's highest-profile trans filmmaker, it shows in only the most enjoyably defiant of ways in <span class="anno">Un Certain Regard<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">戛纳电影节的「一种关注」平行竞赛单元，本片为其开幕影片。</span></span> opener "Teenage Sex and Death in Camp Miasma." A steamy stew of sex, death, VHS and junk food, as though workshopped by Eros, Thanatos, <span class="anno">Colonel Sanders<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">肯德基(KFC)创始人哈兰·山德士的卡通形象，片中作为情欲与死亡拼贴的戏谑符号。</span></span> and the Jolly Rancher in the seediest recesses of a <span class="anno">Blockbuster<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">百视达，美国录像带租赁连锁(已倒闭)，是家庭录像时代观影文化的标志。</span></span> Video, Schoenbrun's delirious third film is their most accomplished, most persuasive and most playful movie yet. Here, the director's perennial questions around gender identity and identification are sublimated into a tribute to the slasher genre that also serves as an exploration of the frequently fucked-up nature of female desire and a manifesto for giving yourself the permission to feel it.</p>
+        <p>That writer-director Schoenbrun has also designed their movie as a delightfully meta in-joke on the Hollywood studio machine is evidenced by a terrifically overstuffed opening credits sequence. Designed by Mila Matveeva, it takes us through the history of the fictional "Camp Miasma" horror franchise, in which a spear-wielding, gender-fluid killer terrorizes the "young and nubile" visitors in a thickly forested lakeside summer camp. There's a parade of VHS covers, marketing materials, merchandising tie-ins, declining box office reports, and inevitably, a flurry of blogs both detailing the series' homophobia and transphobia, and attempting to reclaim it.</p>
+        <p>Meanwhile an interestingly synthy, anti-melodic cover of REM's "Nightswimming" plays — the contrapuntal music cuts are a constant kitschy pleasure, never more so than when the original movie's climactic orgy of bloodletting is accompanied by <span class="anno">Counting Crows<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国摇滚乐队，其《Long December》作为「时代错位」的配乐出现在片中的血腥高潮段落。</span></span>' "Long December," a needle-drop as amusing as it is anachronistic. The titles then close on an illustration of filmmaker Kris (Hannah Einbinder), the "<span class="anno">Sundance<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">圣丹斯电影节，美国独立电影重要阵地；申布伦前作均在此首映。</span></span> wunderkind" who has been tapped to helm the franchise reboot. Just in case the parallels were not already clear (both of Schoenbrun's previous features, "We're All Going to the World's Fair" and "I Saw the TV Glow" premiered to acclaim in <span class="anno">Sundance<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">圣丹斯电影节，美国独立电影重要阵地；申布伦前作均在此首映。</span></span>), that's when the director's name appears.</p>
+        <p>Kris is on her way to meet Billy Preston (played in the past by a tremulous Amanda Fix and in the now by a silky, scrumptious Gillian Anderson), the star of the original "Camp Miasma" movie. Billy refused to return for any of its increasingly derided sequels and now lives in semi-seclusion on the very site where the movie was shot. Both women reject the idea that this makes Billy some kind of "Norma Desmond from 'Sunset Boulevard'" yet she does prove to have a fondness for turbans and for emerging dramatically from the shadows, heavily mascara-ed and ever-ready for her close-up.</p>
+        <p>Both Anderson and Einbinder, in her first feature after her Emmy-winning breakthrough on TV's "<span class="anno">Hacks<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">HBO 喜剧《绝望写手》(2021—)，汉娜·爱宾德凭此剧获艾美奖突破。</span></span>," are on superb form here. But it's the former's self-consciously iconic Billy gets the majority of the meme-able moments, such as when delivering the line like she's licking it off her fingers, she turns to Kris proffering a tray laden with KFC and drawls in her unplaceable Southern accent, "Do you like … dipping sauce?"</p>
+        <p>Anderson appears to be enjoying her foray into Sapphic <span class="anno">high-camp<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">High camp，刻意夸张、戏谑、反讽的审美，常与酷儿文化相连。</span></span> tremendously, and the supporting cast is speckled with equally game performers, from Eva Victor's punk DJ to Dylan Baker's insufferable studio exec, to Kris' lover Mari (Jasmin Savoy Brown) and her dopey hookup Thor (Aren Buchholz). But then everyone here, in front of and behind the camera, looks to be having a great time, which keeps the mood bouncy, however gory or splattery or thematically knotty the moment.</p>
+        <p>Production designers Brandon Tonner-Connolly and Matt Hyland are let off the chain with a succession of stylized interiors and lurid, artificial backdrops where painted snow sits heavy on fir branches beneath a peachy purple twilight sky. The very sun and moon themselves seem to emanate exclusively the bluish-pinky palette of colors recently dubbed "bisexual lighting," and while <span class="anno">Alex G<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">美国音乐人 Alex G(1993—)，负责本片配乐，风格受 1980 年代影响。</span></span>'s 1980s-influenced score swirls in the background, cinematographer Eric K. Yue has fun experimenting with other visual homages to slasher tradition. There are crash zooms and shaky P.O.V. cams, recurring eyeball motifs and split diopters, which even Kris gets excited about, pointing at with awe, "Split diopter!"</p>
+        <p>Kris is, after all, a movie dork, who cannot stop intellectualizing the things she loves and the sometimes unsavory reasons she loves them, long enough to be able to make them, just as her key sexual hangup turns out to be an inability to fully surrender herself to the fantasies that embarrass her but that might just get her off. In the second half — which uses the silliness of slasher convention to get to some fairly profound places — the theme of sexual confusion and erotic dysfunction, particularly as experienced by women, emerges from behind the spouting fountains of blood spurting from the necks of various decapitated unfortunates, as the film's most moving through line.</p>
+        <p>But what can an actress in her fifties and a filmmaker 20 years her junior have to teach each other? At first the central duo's intergenerational incomprehension is played for laughs. "What's poly?" asks Billy, and Kris must eventually concede that yes, it is kinda like cheating, only "with game nights where you have to hang out with bisexual guys named Thor." But as their connection grows, the movie cuts closer to the emotional bone. After one fumbled encounter, Kris curls up into herself in shame and whispers, "I'm just so bad at sex"; later Billy tells of losing her virginity and finding "it was exactly as bad as I had always imagined it would be." Having bonded over this unusually frank confession of female sexual inadequacy, gradually, the older, more worldly woman inducts the younger, less secure one into the arcane acceptance of her own desire. Orgasms, and geysers of blood, ensue.</p>
+        <p>In a love story between generationally different worldviews that are usually believed to be incompatible, Schoenbrun gets to portray the central relationship as a fantasy safe harbor, garlanded with Raisinets and popcorn, in which no one is judged for the misogyny, transphobia or other real-world problematics of what turns them on in their mind. It is Kris' stated aim, echoing with the failures of a hundred indie filmmakers gone before, that she's going "to beat Hollywood at its own game." Perhaps, in smuggling trans allegories, voyeur theory, kink-positive feminism and transgressive fantasy roleplay into the candy wrapper of a movie about remaking a movie about a deranged serial murderer with a box on his head, Jane Schoenbrun has done just that.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 3: SENSES OF CINEMA ============ -->
+  <article class="review" data-stance="analysis">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"Watching me, Watching you, Watching Teenage Sex and Death at Camp Miasma"</p>
+        <h3 class="r-pub">《电影之感知》Senses of Cinema</h3>
+        <div class="r-sub">作者 <span class="author">Alexander Holiday</span> · 2026 年 10 月 · 学术影评 · <a class="orig-link" href="https://www.sensesofcinema.com/?p=53029" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">专题论文</span>
+        <span class="stance analysis">学术深读</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>当你与性的关系——尤其是成长期里——是由电影、电视与互联网框定之时，你几乎无法逃脱这样一种感觉：性是被表演出来、被观看的东西，而等式的两端被显著地、功能性地彼此割裂。性被展示、被提供，被观看、被接收。于是，要去投身于性行为，你便要与"屏幕"的存在搏斗：它隔开你与伴侣，隔开表演与快感之间的那层影片。</p>
+        <p>简·申布伦的《瘴气营地的青春性事与死亡》是彻底自觉的；它名副其实。它把对砍杀片传统那种深刻的自反指涉前置，从而给予申布伦一个新颖的机会，去探查在屏幕时代里，欲望与幻想那愈发自反、迭代的本质。互联网这面双向镜，把约翰·伯格那句被充分描述过的话——"女人必须不断地注视自己"——放大成了一个不透明的倍增器。申布伦由此向前发问：酷儿女性与跨性别酷儿女性，如何在"看"与"被看"的循环里定位自身，以及这激起了何种欲望、又催生了何种羞耻。</p>
+        <p>《青春性事与死亡》是一场把分析付诸戏剧与鲜血喷泉的旋风，它探索怪诞的跨性别性态、自我规训的"autogynephilia（自我异性恋爱好）"，以及双方合意的、非合意的 kink 扮演。字面化成了一种免疫手段：萦绕"片中片"的蒙面杀手"<span class="anno">小死亡<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中蒙面杀手 Little Death。「la petite mort」(法文「小死亡」)是性高潮的委婉语，与片名中的「性事与死亡」形成双关。</span></span>"就是一次高潮（la petite mort），那根猛刺的长矛是插入/阳具，堆积如山的垃圾食品是替代性的满足。通过不浪费时间在显而易见之处，影片能更直接地处置这份文化传承，一层层剥开关于幻想、欲望与酷儿性的、彼此相互担保的建构。</p>
+        <p>摄影机让申布伦得以通过"看"来框定这一切：看见的政治，与被看见的性，被叠合在一起。《青春性事与死亡》追随克里丝（汉娜·爱宾德饰），一位受命复活《瘴气营地》砍杀系列这个"僵尸 IP"的年轻导演——它太赚钱而不可忽视，却又太"问题重重"，非得做一番酷儿式（用克里丝经纪人的话说，"觉醒"）的现代重估。克里丝朝圣般来到营地利沃利 (Camp Tivoli)，《瘴气营地》首作的原始外景地，如今也是饰演"最终女孩"比利·普雷斯利（吉莲·安德森饰）的女演员的居所。两位女性共享着对这个系列的痴迷，被《瘴气营地》里血与欲交汇处某种不可言说之物所吸引；而当克里丝起初试图把这股力量导入自己的翻拍时，比利帮她释放了某种更具转化性的东西。</p>
+        <p>克里丝第一次试图与比利做爱时，先在浴室里抽了根大麻做准备。她盯着镜子，一张苍白少女的肖像——眼窝被挖空、嘴大张、血迹涂抹——在镜中一闪而过。在"血腥玛丽"的传说里，若被女性召唤，这幽灵会显现她未来丈夫的脸，或者，若她命定婚前夭亡，则是一具骷髅。克里丝试图甩掉这预兆，摘下了眼镜。她从浴室出来，羞怯地袒露胸脯，却把脸藏在头发后，像默剧般扮出女性魅惑。在我看过的每一场里，这一刻都引得观众发笑。她害羞，试图摆出一副肆无忌惮性感的样子，自我意识强到近乎滑稽。一言以蔽之：青春期的。她与比利开始做爱，比利问她想被怎样触碰，克里丝却搪塞过去，别扭地用做作的喘息重复"你定就是了"。几秒紧绷之后，她缩了回去，松口道："我做不来这个。"摄影机"咚"地坠到地上。</p>
+        <p>我们回到两人在火堆边、躺在一地软糖包装纸上的画面。虽仍半裸，克里丝某种防御已松动，她能坦诚谈论自己与自身性欲之间的疏离感。眼镜又戴了回去。克里丝似乎头一次，提起了自己的性幻想：她是"受害者、荡妇"，被杀手小死亡追猎于瘴气营地的场地上。克里丝的眼镜与希区柯克《迷魂记》里 Midge 的那副惊人地相似：厚重、黑色、全框。埃丽卡·巴尔索姆曾把这种眼镜描述为"一个知道得太多的女人"的标志。克里丝对于自己成为"处于危难中的老套女性"、渴望那种常被强加于女性的脆弱、以及害怕自己的欲望本身带有厌女色彩的焦虑，阻碍了她享受性。但巴尔索姆也描述过，这位戴眼镜的女性正"走向成为一个主动的观看与认知主体"；而当克里丝敞开自己的欲望，她便允许自己获得真正的安适与唤起。</p>
+        <p>"看"与"被看"的 simultaneity（同时性），对《青春性事与死亡》所呈现的那种具身性欲而言至关重要。在营地的放映室里，克里丝与比利看着初代《瘴气营地》的片段，其中包括比利角色与另一名辅导员做爱的段落。虽没有说出"不"，比利的 visibly uncomfortable（明显不适）。但当小死亡开始逼近，比利的脸从不适与顺从，转向某种更好奇的神情。我们在她呻吟的俯拍与一个小死亡攀爬楼梯、窥看床上她身体的 POV 之间切换。它们靠近，头映在她的眼白里，向下刺去。"我同时是两者，"比利后来解释——既是杀手也是受害者，既是阴蒂性高潮也是阳具性高潮，既是观看者也是被看者。克里丝为"你眼中的那个神情"所迷，那神情同时显露痛楚、欢愉、震惊、恐怖与顿悟。见到此景，克里丝意识到自己再也无法停留在学术的疏离中："我不只想看着它、把它放进一部电影，我也想亲身体验，"她对比利说，"你愿意帮我吗？"</p>
+        <p>克里丝的性幻想，是成为"最终女孩"，乳房弹跳着、徒劳地从一大一小死亡面前奔逃，最终被刺穿。克里丝描述的是：渴望被渴望到极致暴力的程度，渴望自己诱人至极、被追逐到违背己愿，最终被强奸、被谋杀。要进入这幻想，她必须让性淹没自己的感官。她那种自我批判的思维，必须被吞没一切的快感摧毁，好让这些欲望——违拗于她的政治立场——附着于青春期吸纳入体的、那些压迫性的、决定性的叙事，并由此形成某种创伤性的自我感。当她最终直面自己的幻想、与小死亡肉身相对时，她的眼镜坠落、碎裂。她自我觉知的工具碎了，而她一头扎进那场双方合意的、非合意的扮演，为活命而奔逃。</p>
+        <p>克里丝用以接纳自身幻想、达成性互的主体性的开场白，是"我在想关于转变 (transforming)"——这绝非巧合。尽管《瘴气营地》显然关乎暴力与欲望的关系，它更尖锐地，是关于跨性别之后 (after transitioning) 的跨性别性欲。裘德·多伊尔主张，必须把克里丝与比利理解为跨性别女性，因为《瘴气营地》从根本上、彻底地"关乎学习以一名拥有阴茎的酷儿女性的身份去驾驭性"。他写道：</p>
+        <p class="note">"[比利] 已学会把那根长矛作为自己性体验的一部分来接纳、甚至欢迎……并教会 [克里丝] 如何让长矛在自己的性生活里扮演一个角色，而不引发羞耻的漩涡，这很甜。为了熬过性，她必须解离，具体而言，她必须想象自己是恐怖片里那个女孩——被那个用象征性阳具消灭女性的邪恶跨性别者杀死的女孩。想成为任何一个女孩，更别提是这个女孩，都感觉'厌女'而羞耻，于是她 shut down（封闭自己）。"</p>
+        <p>片中《瘴气营地》系列的导演名叫 Ray Blanchard，取自那位性学家——他的"跨性别分类学"把跨性别女性归类为要么是"同性恋跨性别者"（以女性化姿态吸引男性），要么是"自我异性恋爱好型跨性别者"（因拥有一个女性身体与性器的念头而兴奋）。布兰查德的分类未将顺性别女性纳入；而当此类研究真的纳入她们时，它们表明大多数女性——无论顺性别或跨性别——在性中都体验过对身体与性器的具身唤起，因而所有人都有某种程度的自我异性恋爱好。尽管如此，布兰查德的研究仍对北美跨性别医疗产生了不成比例的物质性影响，助长了把性别不安与跨性别体验持续病理化的倾向，以及那种对跨性别者、尤其是跨性别女性"性偏差"的残酷规训文化。</p>
+        <p>克里丝的羞耻根植于这份遗产：她害怕自己"作为一个女性而被渴望"、以自我异性恋爱好方式看待自己，是一种剥削。克里丝钻进脑子里，是为了逃离身体。当你的身体并非你自己，有时脑子是个更舒服的所在。那是一种对"因渴望被一个把自己视为女性身体的伴侣享受"而遭受病理化压力的创伤性反应。把欲望劈成被投射的观看者，是一种放弃能动性与权力的努力，也是否认那追逐之力中男性成分的努力。克里丝对自己性欲那种自我贬抑的态度，与否认、对成为掠夺者的恐惧，以及对自己身体情欲潜能的疏离缠在一起。她几乎含泪地表达自己"不善做爱"。</p>
+        <p>这种"被追逐的快感及其随之而来的羞耻"，在《青春性事与死亡》主创团队之外、申布伦本人的前作里也有描述。吉莲·安德森的书《Want》（2024）虽以安德森之名出版，实则是女性匿名投稿、细述自己性幻想的合集（尽管据称其中一篇出自安德森本人）。许多投稿直面性中的权力与暴力，好几篇描摹被压倒、被制服、被攻击、被强奸的梦。即便匿名，这些女性仍费力地解释：她们是女权主义者，现实里并不希望如此，而幻想中的追逐者得到了她们的同意。正如评论者 Marcela Santos Brigida 所辨认出的，她们的"内在审查"始终在场。这种高度警觉，与克里丝害怕显得"#MeToo 式"的焦虑是相似的感觉。这些女性为自己被视为"不仅会容许这暴力发生、还会从中取乐"的那种人而感到羞耻。安德森把这些欲望从内在的羞耻，护送进公开的展演，恰好呼应了她为克里丝所起的引领作用。</p>
+        <p>申布伦此前的影片，同样受到互联网对青少年性欲之影响。当《荧屏在发光》上映，格雷格·阿拉基为《Filmmaker Magazine》采访申布伦，申布伦谈到如何通过书写自己接下来的作品（即《青春性事与死亡》）来处理自己的性欲。" transition 之前，我并非无性恋——我欲望充沛——但在错误的身体里拥有好的性，是不可能的，"他们解释，"可得的，唯有彻底的解离。" 互联网上发生在孩子与青少年身上的"带着性暗示的怪事"，被视为心理上的塑形、偶尔的阻滞，且坦率地说"怪"（用申布伦自己的话）。在《荧屏在发光》里，更自信的 Maddy 问羞怯内向的 Owen："你喜欢男生？喜欢女生？"他怯懦地答："我想我喜欢电视节目。"</p>
+        <p>虚构即角色扮演，而在申布伦的电影里，它对那些真实被现实否认了的人们的性表达而言，至关重要。《瘴气营地》系列被揭示为小死亡的造物——它从湖底的洞里出现，并在真实发生的电影中，充当一个超越性的编导演合一者。小死亡开启了一个游戏的安全空间，其中暴力的限度与性的限度既非常真实，又流动而顽固。这让小死亡得以探索、并沉醉于一种曾被营地客们（在它少年时将其处决）剥夺的权力位置。对克里丝而言，她能向一个既是陌生人、又极亲近的人敞开自己的性欲——考虑到克里丝通过《瘴气营地》电影对比利长期的准社会关系式痴迷。于是，《瘴气营地》影片的互文指涉，发展出一套性欲的架构。每一部都是一部迭代式的色情作品，调用同样的场景、角色与桥段，服务于小死亡的满足。因而比利把《瘴气营地》的各部分称为"他的电影"。</p>
+        <p>电影的功能就是被看。通过这些游戏创制出这些人造物、这些《瘴气营地》影片，坚持把"被认出"作为性与性权力的一个本质成分。小死亡的头是一个空调通风口，表达着：通过公开指认"跨性别杀手"这一桥段，来释放、来厘清空气。那同心方框也可能唤起"屏幕中的屏幕"，以及"看与被看之看的循环"。在小死亡那段壮丽的、一镜到底的杀戮狂潮里，一次杀戮之后，它停下休憩。头中央那块不透明的方块散去雾气，我们看见它的眼睛向外凝视。正如比利的眼睛在她初次认出自己既是观看者也是被看者时所显现，此刻，小死亡看见了我们。</p>
+        <p>《青春性事与死亡》的批评者，批评它过度用力且无休止地使用视觉隐喻、不断使眼色，以及内置的智识防御姿态。为《Salon》撰稿的科尔曼·斯皮尔德痛斥它把意识形态权威下放给观众，忽视了"所有这些点子核心处的那部电影"。然而，这并非退却或叛逃到智识主义，而是一种正成为申布伦 signature（标志）的、电影制作模式的相互作用。"电影是这么美的一种媒介，而我们主要拿它当叙事投递机制来用，是对其力量的一种有限利用，"导演在《i-D》杂志的采访中说，"你可以让它复杂化、质询、颠覆、挑逗、挫败。" 如果整条线索似乎更执着于对经典恐怖片里生殖器寓言的象征化处理，而牺牲了人物塑造，那么，嗯，大概确实如此。</p>
+        <p>《青春性事与死亡》通过一则暴力却乐观的自我接纳故事，欢迎学术的、色情的、感官的与叙事的多元读法。影片鼓励我们沉溺于反常 (perversion) 的快感，让我们得以同时占据克里丝、比利与小死亡彼此叠合、相互确证的欲望与视点。形式、视点与欲望的叠加，在最终高潮里被视觉化：小死亡刺穿比利、再刺入克里丝，三人被死亡与狂喜、一根生锈长矛的贯穿， ecstatic（狂喜）地缚在一起。一篇现已删除的博客，把这瞬间比作手术式的 transition：走上手术台，醒来时已变得更好。两位女性在血泊的余韵中醒来，克里丝得以重返"真实"世界，未穿胸衣、未戴眼镜，终于在身心之中安适。当小死亡的幽灵再次升起，克里丝望向摄影机之外，露出欢迎的微笑。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>When your relationship to sex, especially in your formative years, is framed by movies, television, and the internet, it is near impossible to escape the feeling that sex is something performed and viewed, with these two parts of the equation being significantly and functionally removed from each other. Sex is displayed and offered, watched and received. To engage, then, in the sex act, you grapple with the presence of the screen: what separates you from a partner, the film between performance and pleasure.</p>
+        <p>Jane Schoenbrun's Teenage Sex and Death at Camp Miasma is wholeheartedly self-aware; it does what it says on the tin. Front-loading its profound hyperreferentiality to the legacy of slasher films affords Schoenbrun the novel opportunity to probe the increasingly reflexive and iterative nature of desire and fantasy in the screen age. The two-way mirror of the internet is an opaque multiplier of the phenomena well described by John Berger that 'A woman must continually watch herself.' Schoenbrun leaps forward from this to question how <span class="anno">queer<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">酷儿，泛指非异性恋规范的身份与欲望；本片以酷儿视角重读类型片。</span></span> women and trans queer women position themselves in cycles of looking and being looked at, as well as the desires this arouses, and the shame this desire induces. Teenage Sex and Death is a whirlwind of analysis put to drama and fountains of blood, exploring monstrous transness, self-policed "autogynephilia," and consensual non-consent kink-play. Literality becomes a tool of inoculation: <span class="anno">Little Death<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">片中杀手名，源自法文「la petite mort」(字面「小死亡」)，是性高潮的委婉说法，呼应片名主题。</span></span>, the masked killer haunting the film-within-the-film, is an orgasm (la petite mort), the thrusting spear is penetration/a penis, the mountains of junk food are surrogate satisfaction. By wasting no time with the obvious, the film can more directly address this cultural inheritance, peeling back mutually assured constructions of fantasy, desire, and queerness, layer by layer. The camera allows Schoenbrun to frame this through looking: the politics of seeing, and the sexuality of being seen, superimposed.</p>
+        <p>Teenage Sex and Death follows Kris (Hannah Einbinder), a young filmmaker tasked with resurrecting the 'zombie IP' of the Camp Miasma slasher franchise, deemed too profitable to ignore but too problematic for anything short of a queer – in Kris's agent's words "woke" – modern reappraisal. Kris makes her pilgrimage to Camp Tivoli, the original shooting location of the first instalment of Camp Miasma, and now residence of the actress who played its Final Girl, Billy Presley (Gillian Anderson). The two women share an obsession with the series, drawn by something unspeakable in the confluence of blood and lust within Camp Miasma, and while Kris initially tries to channel this force into her adaption, Billy helps her unleash something far more transformative.</p>
+        <p>The first time Kris tries to have sex with Billy, she prepares herself by smoking a joint in the bathroom. As she stares in the mirror, a portrait of a pale young woman with gouged eyes and a mouth gaping and smeared with blood flashes in the reflection. In the legend of Bloody Mary, if summoned by a woman the spirit would show either the face of their future husband, or a skull if they were destined to die before marriage. Kris tries to shake off this foreboding sign, removing her glasses. She emerges from the bathroom, sheepishly baring her breasts but hiding her face behind her hair, pantomiming feminine allure. In each screening I've been in, this moment draws a laugh from the audience. She is shy, attempting an idea of brazen sexuality, overwhelming self-conscious to the point of ridicule. In a word, adolescent. She and Billy begin having sex, Billy asking her how she wants to be touched, but Kris brushes it off, awkwardly repeating "dealer's choice" with forced breathiness. After a few tense moments, she clams up, relenting "I can't do this." The camera drops to the ground with a thud.</p>
+        <p>We return to the women lying by the fire on a bed of gummy candy wrappers. Though still half naked, something in Kris' defensiveness has slipped, and she can speak frankly about her felt distance from her own sexuality. Her glasses are back on. Kris, seemingly for the first time, broaches her sexual fantasies, where she is "a victim, a slut," hunted by the killer Little Death on the grounds of Camp Miasma. Kris' glasses are remarkably similar to Midge's in Alfred Hitchcock's Vertigo: thick, black, and full-rimmed. Erika Balsom described the spectacles as indicative of "a woman who knows too much." Kris' anxieties about being a cliche woman in distress, wanting the vulnerability often forced upon women, her fears of being misogynistic in her own desires, obstruct her ability to enjoy herself sexually. But Balsom also describes the bespectacled woman as moving "towards being an active subject of vision and knowledge," and as Kris opens up about her desires she allows herself real comfort and arousal.</p>
+        <p>The simultaneity of seeing and being seen is essential to the embodied sexuality Teenage Sex and Death represents. In the camp projection room, Kris and Billy watch scenes from the original Camp Miasma, including the part where Billy's character has sex with another counsellor. While there isn't a spoken "no," Billy is visibly uncomfortable. But Billy's face shifts from discomfort and resignation to something more curious when Little Death begins to approach. We cut between an overhead shot of her moans with a creeping POV of Little Death climbing the stairs, seeing her body on the bed. They approach, their head reflected in her sclera, and stab downwards. "I was both of us," Billy later explains, both killer and victim, both clitoral and phallic orgasm, both watcher and watched. Kris is fascinated by "that look in your eye," revealing at once pain, pleasure, shock, horror, realisation. Seeing this, Kris realises she can no longer live at an academic remove: "I don't just want to watch it and put it in a movie, I want to experience it too," she tells Billy, "Will you help me?"</p>
+        <p>Kris' sexual fantasy is to be the final girl, tits bouncing as she runs in vain from Little Death before being finally penetrated. Kris describes wanting to be wanted to the point of extreme violence, to be so desirable as to be pursued beyond her will, finally raped and murdered. To enter the fantasy she must let sex overwhelm her senses. Her self-critical thinking must be obliterated by all-consuming pleasure, allowing these desires to adhere, against her politics, to oppressive and definitive narratives imbibed in adolescence that have formed a traumatic sense of self. When she is finally confronted by her fantasy, facing Little Death in the flesh, her glasses fall and break. Her tool of self-awareness breaks as she enters the play of consensual non-consent and she runs for her life.</p>
+        <p>It is no coincidence that Kris' inaugurating words into accepting her fantasies and achieving sexual mutuality are "I think about transforming." While Camp Miasma is clearly about the relationship between violence and desire, it is more pointedly about trans sexuality after transitioning. Jude Doyle argues it is essential to understand Kris and Billy as trans women, as Camp Miasma is fundamentally and totally "about learning to navigate sex as a queer woman with a penis." He writes: "[Billy] has learned to include, and even welcome, the spear as part of her sexual experience, and … teaches [Kris] how to allow the spear to play a role in her sex life without causing a shame spiral, which is very sweet. In order to get through sex, she has to dissociate, and specifically, she has to imagine she's the girl in the horror movie—the one who gets killed by the evil trans person who obliterates women with his symbolic penis. Wanting to be any girl, let alone this girl, feels 'misogynistic' and shameful, so she shuts down."</p>
+        <p>The in-universe director of the Camp Miasma film series is named Ray Blanchard, after the sexologist whose "transsexualism typology" categorises of trans women as either: "homosexual transsexuals," presenting feminine to attract men; or "autogynephilic transsexuals," who are turned on at the idea of having a female body and genitals. Blanchard failed to account for cis women in his categorisation, and when such studies are done they demonstrate most women, cis or trans, experience embodied arousal at their body and genitals during sex and therefore all have some level of autogynephilia. Nevertheless, Blanchard's work had outsized material impact on North American trans health care, contributing to the persistent pathologisation of gender dysphoria and trans experiences, and to the cruel culture of policing "sexual deviancy" in trans people, particularly trans women.</p>
+        <p>Kris' shame is rooted in this inheritance: she is afraid that wanting to be desired as a woman, viewing herself in an autogynephilic way, is exploitative. Kris gets in her head to get out of her body. When your body isn't who you are, sometimes your head is a nicer place to be. It is a traumatic response to pressure of being pathologised for wanting to be enjoyed by a partner who sees them as having a female body. The splitting of desire into the projected viewer is an effort to relinquish agency and power, as well as deny the masculine component of the pursuing force. Kris' self-effacing approach to her own sexuality is tied up in denial, fears of being predatory, and a disconnection from the erotic potential of her own body. She expresses this, almost in tears, at being "bad at sex."</p>
+        <p>This pleasure in being pursued and the ensuing shame is described in previous works from the Teenage Sex and Death team outside Schoenbrun themselves. Gillian Anderson's book Want (2024), while published under Anderson's name, is a collection of anonymous submissions from women detailing their sexual fantasies (though reportedly one entry is by Anderson herself). Many of the entries confront power and violence in sex, with several describing dreams of being overpowered, subdued, assaulted, and raped. Even through their anonymity, these women take pains to explain they are feminists, they don't wish for this in real life, and that the pursuer in their fantasy has their consent. Their "internal censure," as reviewer Marcela Santos Brigida identifies it, "is very much present." This hyper-vigilance describes a similar feeling to Kris's anxieties about seeming "me-too-y". These women are ashamed of being seen as the kind of person who would not only allow this violence to happen, but also to derive pleasure from it. Anderson chaperones these desires through insular shame into public display, complimenting her initiating role for Kris.</p>
+        <p>Schoenbrun's previous films have also been informed by the influence of the internet on teenage sexuality. When I Saw the TV Glow was released, Gregg Araki interviewed Schoenbrun for Filmmaker Magazine, where they described processing their sexuality through writing their upcoming work (what would be Teenage Sex and Death). "Pre-transition, it wasn't that I was asexual – I had plenty of desire – but having good sex in the wrong body was impossible," they explained. "What was available was full dissociation." The "weird shit with sexual undertones" that happens to kids and teenagers on the internet is understood to be psychologically formative, occasionally stunting, and frankly "weird" (in Schoenbrun's own words). In TV Glow, the older, more confident Maddy asks the painfully introverted Owen, "Do you like boys? Do you like girls?" To which he meekly responds, "I think I like TV shows."</p>
+        <p>Fiction is roleplay, and in Schoenbrun's films, it is essential for the sexual expression of people whose truth has been denied by reality. The Camp Miasma films are revealed to be creations of Little Death, who emerges from the hole at the bottom of the lake and operates as a transcendent writer-director-actor in the very real films that take place. Little Death initiates a safe space of play where the limits of violence and sexuality are both very real as well as fluid and intransigent. This allows Little Death to explore and delight in a position of power that was denied to them by the campers' execution of them as a teenager. For Kris, she can open up about her sexuality to someone who is simultaneously a stranger as well as someone very close to them, given Kris' long term parasocial obsession with Billy via the Camp Miasma movies. The intratextual referencing of the Camp Miasma films, then, develops an architecture of sexual fantasy. Each film is a work of iterative pornography, deploying the same settings, characters, and tropes in service of Little Death's gratification. Hence Billy's description of the instalments of Camp Miasma "his movies".</p>
+        <p>The function of a film is to be watched. The creation of these artefacts, the Camp Miasma films, through the play, insists on recognition being an essential component of sex and sexual power. Little Death's head is an air conditioning vent, expressing the release and clearing the air by openly addressing the trope of the trans killer. The concentric squares may also evoke screens within screens, and the cycle of watching being watched watching. During Little Death's magnificent one-shot killing spree, there is a moment after a kill where they stop and rest. The opaque square in the centre of the head defogs, and we see their eyes staring out. As Billy's eyes showed the moment she first understands herself as the watcher and the watched, here Little Death sees us.</p>
+        <p>Teenage Sex and Death's detractors have criticised its heavy-handed and incessant use of visual metaphor, constant winking, and built-in intellectual defensiveness. Writing for Salon, Colman Spilde lambasted its relegation of ideological authority onto the audience, neglecting the "film at the core of all of these ideas." Rather than a retreat or defection to intellectualism, however, this is an interplay of filmmaking modes that is becoming Schoenbrun's signature. "Film is such a beautiful medium, and the fact that we primarily use it as a narrative delivery mechanism is such a limited use of its power," the director stated in an interview with i-D magazine: "You can complicate, and interrogate, and subvert, and titillate, and frustrate." If entire throughlines of the film seem more preoccupied with a symbolic treatment of genital allegories in classic horror films at the expense of characterisation, well, they probably are.</p>
+        <p>Teenage Sex and Death welcomes the plurality of academic, erotic, sensual, and narrative readings through a violent yet optimistic story of self-acceptance. The film encourages us to indulge in the pleasures of perversion, allowing us to simultaneously occupy the points of view and mutually affirming desires of Kris, Billy, and Little Death. The superposition of forms, perspectives, and desires is visualised in the final climax: Little Death stabs through Billy into Kris, the three held together through an ecstatic blend of death and delight and a skewering rusty spear. A now-deleted blog post likened this moment to surgical transitioning: going under the knife and waking up changed for the better. The women wake up in a blood-soaked afterglow, and Kris is able to re-enter the 'real' world, braless and bare-eyed, finally at ease in her body and mind. As the spectre of Little Death rises once again, Kris looks beyond the camera with a welcoming smile.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 4: CURRENT AFFAIRS ============ -->
+  <article class="review" data-stance="analysis">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"'Teenage Sex and Death at Camp Miasma' as Meta-Meta-Slasher"</p>
+        <h3 class="r-pub">《当下事务》Current Affairs</h3>
+        <div class="r-sub">作者 <span class="author">RS Benedict</span> · 2026 年 9 月 6 日 · 文化政治分析 · <a class="orig-link" href="https://www.currentaffairs.org/news/teenage-sex-and-death-at-camp-miasma-as-meta-meta-slasher" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">长篇评论</span>
+        <span class="stance analysis">另类视角</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>简·申布伦对 1980 年代糟粕恐怖片的新致敬，要观众这次换个方式：别再过度分析了。</p>
+        <p>恐怖电影那种越界的天性，赋予了讲故事的人探查禁忌的自由，尤其是关于性与死亡。有时这些议题被处理得审慎而富洞见。但更多时候，并非如此。性别不一致 (gender-nonconformity)，尤其常被表现为恶之根源。《沉默的羔羊》《亨利：连环杀手肖像》《德州电锯杀人狂》《Death Spa》《剃刀边缘》《In Dreams》《洛基恐怖秀》《睡眠营》，以及更近的《钛》，还有它们的老祖母《惊魂记》——这些电影里都有性别错乱的杀人狂。在互联网时代之前，跨性别孩子或许第一次在租来的录像带上看见一个像自己的人——然后，紧接着，看见自己作为待消灭的怪物。</p>
+        <p>简·申布伦的新作恐怖/喜剧/爱情片《瘴气营地的青春性事与死亡》，探索了酷儿恐怖迷与他们所处类型之间那种复杂的、受虐般的关系：这个类型既歌颂他们、又妖魔化他们，先赋予他们声音、再用砍刀把他们的头颅剁下。连同申布伦此前的《我们都要去世界的尽头》与《荧屏在发光》，《青春性事与死亡》构成了关于酷儿性、孤立，以及对恐怖媒介过度认同的"精神三部曲"的第三部分。在第一部里，一个孤独的、性别不一致的孩子迷失在对一则网络 creepypasta 的危险痴迷中。在《荧屏在发光》里，一个名为 Owen 的、深度抑郁的性别不一致角色，像幽灵般蹒跚度日，在一档诡异的 1990 年代儿童电视剧里寻找真实的自我。而在《青春性事与死亡》里，一个焦虑、被压抑的性别不一致艺术家，在砍杀片的血腥世界里找到了自我实现。</p>
+        <p><b>"天哪，她是个男孩！"</b></p>
+        <p>申布伦的"片中片"《瘴气营地》，指涉了许多为人钟爱的恐怖系列，而它在视觉上尤其模仿《十三号星期五》（还点缀了点《寂静岭》的金字塔头）。但它压倒性地、决绝地，是一封写给罗伯特·希尔兹克《睡眠营》的情书——那部 1980 年代的<span class="anno">邪典<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Cult，指拥有狂热小众粉丝群、常被主流忽视的作品或导演风格；申布伦常被归入邪典作者。</span></span>砍杀片，讲一群粗鄙、发情的少男少女与辅导员，在一个管理混乱的夏令营里被杀死。这部低成本垃圾盛宴在申布伦的电影里被反复点名。那片营地与纽约州 Argyle 以南约一小时车程的哈德逊河谷小镇 Tivoli 同名，而《睡眠营》正是在那里拍摄。《瘴气营地》的起源故事，也与《睡眠营》的结尾平行。</p>
+        <p>《睡眠营》于"觉醒前"的 1983 年上映，它用《惊魂记》式的终极揭示——那个怯懦、长期被霸凌的儿童主角 Angela 是个 AMAB（出生指派男性）的连环杀手——大概意在制造恐同的惊吓效果。整部电影里，酷儿性带来腐化与死亡。Angela 父亲的同性关系导致混乱、可能的乱伦，以及某种致命的划船事故。Angela 的性别转换，是被她那个疯癫的阿姨（同时也是医生）强加于她的，方式非常像 J.K. 罗琳所想象中的性别肯定医疗。然而，糟糕的表演、诡异的台词、暴露的男装（1980 年代男辅导员制服显然由露脐上衣、热裤，以及偶尔的渔网肌肉衫组成），加上角色们对异性恋表演的那种青春期式痴迷，把这部电影变成了一场 camp（双关无法避免）的操练。</p>
+        <p>一些跨性别粉丝把 Angela 认作一位复仇式的反英雄。"Angela 干掉的那些人，每一个都 justification 得惊人，"曾短暂出镜于《荧屏在发光》的跨性别 YouTuber 兼音乐人 May Leitz 说，"她是个女王。" 此言不虚：Angela 杀掉的角色全都不是东西。其中两个是恋童癖——一个被弓箭射死，另一个被煮进一大锅玉米里。多数是在浴室、水潭这类政治意味浓重的空间里霸凌 Angela 的恶霸。还有一个自私的男友，越过了 Angela 的边界，继而出轨——往好了说是混蛋，往坏了说是 creep。当代观众，尤其跨观众，很容易为杀人的 Angela 喝彩。</p>
+        <p>这么做是否有问题？我们该为享受它而感到罪恶吗？如果你是跨性别者呢？如果你是跨性别者，但是"错的那种"跨——比如跨男或 agender（无性别），而非像 Angela 那样的跨女呢？这是一种 reclaim（重夺），还是某种背叛？</p>
+        <p>《瘴气营地的青春性事与死亡》里处在中心的两位主要角色，代表了应对此类棘手问题的两种不同方式。一位，是那场由在线酷儿媒体话语组成的"啄 party"的老兵，她把问题过度检视、过度分析、过度审查到自我 miserable（痛苦）。另一位，则满足于抽大麻、吃糖果，好好享受这该死的电一影。</p>
+        <p><b>瘴气 (Miasma)</b></p>
+        <p>在希腊神话里，miasma 是一种会沾染罪行的、具传染性的精神污染，可附着于一处地方，兴风作浪，直到它被清除。在申布伦的"片中片"《瘴气营地》里，那桩罪，是对一个性别流动的孩子施加的恐跨谋杀；而那诅咒，是一个叫"小死亡"的砍杀杀手，戴着通风口面具、穿着塑胶衣，从湖里爬出，用一根阳具般的长矛谋杀发情的异性恋少年。</p>
+        <p>《青春性事与死亡》的主角，是那个极度千禧一代的克里丝（汉娜·爱宾德饰），一位受命复活疲态尽显的《瘴气营地》系列的年轻独立导演，片厂下令要它"高级化"，即"觉醒"。克里丝从一开始就知道自己是个 diversity hire（多元雇用），被选中来给这个系列"洗白"其问题元素，因为她/他们是酷儿——一种涉及无聊桌游、以及与名叫 Thor 的蠢笨双性恋者组成多角关系的酷儿。</p>
+        <p>和许多被榨干的 IP 一样，新版《瘴气营地》打算拍一部聚焦于小死亡起源故事的前传。（换言之，这是一部必须以一个小酷儿孩子在一场仇恨犯罪中被溺死收场的电影。）但克里丝反而迷上了首部《瘴气营地》的女主角比利（吉莲·安德森以十足诺玛·戴斯蒙德模式饰演），后者已退出演艺圈，隐居在首作拍摄地的废弃夏令营。克里丝想让故事以比利为主角推进。在比利身上，克里丝看见了酷儿神经质者最宏大的幻想：一个富有、火辣的年长者，愿意把你身上不对劲的东西干出去。</p>
+        <p>但克里丝在性上有个心结。她聪明过了头。她借工作躲开性，把性理智化，在性中解离，唯有把自己想象成旧《瘴气营地》电影里的角色，才能体验任何快感。尽管满口酷儿女权修辞，克里丝幻想的，是成为那种被蒙面杀手（其名是"高潮"的法语婉语）追得半裸奔逃的傻妞。她知道这对她不好——性的垃圾食品，正如比利在他们第一餐时骄傲地用银盘端上的 KFC，带着蘸酱 sensuously（性感地）吞咽。</p>
+        <p>这部电影在这层意义上是自传性的。在《Filmmaker Magazine》的采访中，申布伦对格雷格·阿拉基说："transition 之前，我并非无性恋——我欲望充沛——但在错误的身体里拥有好的性，是不可能的。"</p>
+        <p>如此强烈地在性上认同一部垃圾砍杀片，是错的吗？把自己看作杀手与受害者之间那层半透明的屏幕，是厌女或自我毁灭吗？在两人私下的《瘴气营地》观影中，克里丝像抢答的老师宠儿，在另一名学生还举着手时便喊出答案，吱吱地说"这部分恐跨"，比利只简单回了一句"闭嘴"。"好，"克里丝说。</p>
+        <h4>净化 (Katharsis)</h4>
+        <p>要驱除 miasma，希腊人举行净化仪式。这些仪式可能包含对原初触犯者施加致命复仇。有时，祭司用水或祭牲之血洗去 miasma。</p>
+        <p>在《青春性事与死亡》里，一团过度智识焦虑的 miasma 笼罩着克里丝的心智，使她无法抵达性狂喜。为净化这诅咒，比利召唤小死亡，去砍穿那些体现克里丝心结的形象——那恼人的多角关系、那讨嫌的片厂高管、那唯利是图的经纪人，以及最终，克里丝最大的敌人：她自己——并以血为她施洗。"全都是 flesh and fluids（肉与体液）而已，"比利说，对抗着克里丝对砍杀类型性别动力无尽的开炮。"</p>
+        <p>幻想看着伴侣的伴侣被杀，只为让自己能高潮，这是有毒的吗？为了能上床而关掉自己的脑子，这是丧失力量吗？比利与克里丝之间的年龄差有问题吗？克里丝自私地征用比利、通过暴力来在性上治愈自己，这自私吗？这部电影似乎在挑衅我们，去在专栏文章、视频杂谈和社交媒体上无休止地拆解这些问题。难点在于：闭嘴。好吗？</p>
+        <h4>漫长的肢解 (A Long Dismember)</h4>
+        <p>随着 1980 年代转入 1990 年代，砍杀片开始后继乏力。你能杀的发情少年终究有限，观众迟早厌烦。但当这股潮流开始 stale，那些先前把该类型贬为低俗厌女垃圾的评论者，开始把它重估为"关于厌女、而非表达厌女"的评论。在 Carol J. Glover 1992 年的著作《男人、女人与电锯：现代恐怖片中的性别》中，她主张恐怖片其实是关于女性反抗压迫性男性凝视（在《万圣节》《黑色圣诞》等片中以杀手 POV 摄影机呈现），并从男性压迫者手中夺回能动性。正是这本书创造了"最终女孩"一词，指那个幸存大屠杀、击败坏蛋的恐怖片女主角。</p>
+        <p>电影人注意到了。韦斯·克拉文的《新夜惊魂》（1994）用一则元叙事解构了早年的《猛鬼街》系列——弗雷迪·克鲁格闯入现实，攻击在首部《猛鬼街》里饰演最终女孩的演员希瑟·朗根坎普。两年后，克拉文用《惊声尖叫》给棺材钉上最后一颗钉。这部 1996 年的砍杀片，讲一群痴迷砍杀片的少年被一个同样痴迷砍杀片的蒙面杀手砍杀，它骄傲地讽刺了该类型的陈词滥调与"规则"——"别做爱""别喝酒或嗑药""永远别说'我马上回来'"。</p>
+        <p>自那以后，<span class="anno">元砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Meta slasher，对砍杀类型进行自反性戏仿／解构的影片，本片被多篇评论称为「元-元砍杀片」。</span></span>杀死了传统砍杀片，如今穿着受害者的皮四处横行。在《林中小屋》《塔克与戴尔大战弗兰肯斯坦》《你必死》《面具之下：莱斯利·弗农的崛起》，以及众多《惊声尖叫》续集、《尖叫女王》《最终女孩》(2015)、《最后的女孩支持小组》等作品中，那些自觉的、常带讥诮的角色，一边谈论砍杀片、一边在戏仿砍杀套路的砍杀片里被砍。如果说有什么，元砍杀类型正僵化成它自己的一套陈词滥调。把"最终女孩是什么"解释上那么多次，观众迟早厌烦。</p>
+        <p>《瘴气营地的青春性事与死亡》出自一个熟知这一切、也知道你熟知这一切的人之手。它默认观众听过"最终女孩"这个词，而不会停下来解释它是什么。它默认观众已吸收并/或生产过成百上千条关于恐怖片、关于恐怖套路的帖子、梗图、YouTube 视频与播客——关于它们是否厌女或赋权，关于银幕裸露是性积极还是男性凝视，关于年龄差关系是否本质剥削，关于 BDSM 是解放还是仅为把虐待规范化，关于多角关系是去殖民化的爱情还是退行成《使女的故事》式的小型性邪教。它默认我们已在关于文化、恐怖与性的话语中走得太深，直到话语本身成了焦点，吸干了我们所有的能量与情绪，只留下疲惫、紧张、性冷淡与孤独。</p>
+        <p>在学会走出自己的脑子之前，克里丝就是这样。而如果你是个在网上的时间太长的酷儿恐怖迷，你或许和克里丝有这点共鸣。（而如果你正在读这篇文章，你大概也有点像那样。）</p>
+        <p>《瘴气营地的青春性事与死亡》与其说是<span class="anno">元砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Meta slasher，对砍杀类型进行自反性戏仿／解构的影片，本片被多篇评论称为「元-元砍杀片」。</span></span>，不如说几乎是一部关于元砍杀片、以及过度分析你所爱之物的危险的"<span class="anno">元-元砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Meta-meta slasher，对「元砍杀片」本身再作自反戏仿的影片，见 Current Affairs 的命名。</span></span>"。它要求我们承认那些矛盾与不适，然后继续前行。思考只能带你走这么远；你得继续生活，去活一点点。别那么担心。拥抱傻白甜心态。去上床，去户外。</p>
+        <p class="note">RS Benedict 拥有语言学硕士学位，作品见于《Current Affairs》《Fangoria》《Blood Knife》《New Haven Independent》及《The Magazine of Fantasy & Science Fiction》等。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>In an interview for Filmmaker Magazine, Schoenbrun told Gregg Araki, "Pre-transition, it wasn't that I was asexual—I had plenty of desire—but having good sex in the wrong body was impossible."</p>
+        <p>Is it wrong to sexually identify so much with a trashy slasher movie? Is it misogynistic or self-destructive to see yourself as the translucent screen between killer and victim? During their private viewing of Camp Miasma, Kris, like a teacher's pet calling out the answer while another student's hand is up, chirps, "This part's transphobic," to which Billy replies, simply, "Shut up." "Okay," says Kris.</p>
+        <p>To exorcise a miasma, the Greeks performed purification rituals. These rituals might involve inflicting fatal vengeance upon the original transgressor. Sometimes, priests washed the miasma away using water or the blood of a sacrificial animal. In Teenage Sex and Death, a miasma of hyper-intellectual anxiety clouds Kris's mind, preventing her from reaching sexual ecstasy. To purge the curse, Billy invokes Little Death to hack through the figures who embody Kris's hangups—the annoying polycule, the obnoxious movie studio executives, the money-grubbing agent, and, finally, Kris's biggest enemy, herself—and baptize her in blood. "It's all just flesh and fluids," Billy says, against Kris's endless yapping about the gender dynamics of the slasher genre.</p>
+        <p>Is it toxic to fantasize about watching your partner's partner get killed just so you can cum? Is it disempowering to shut your brain off so you can get laid? Is the age gap between Billy and Kris problematic? Is Kris selfish for enlisting Billy to sexually heal her through violence? The film seems to dare us to pick apart these questions endlessly in thinkpieces and video essays and on social media. This is the hard part: shut up. Okay?</p>
+        <p>Slasher movies started running out of steam as the 1980s turned into the '90s. You can only kill so many horny teens before the audience gets bored. But as the trend started to go stale, critics, who had previously dismissed the genre as low-brow misogynistic trash, began to reappraise horror movies as commentaries on misogyny rather than expressions of misogyny. In her 1992 book Men, Women and Chain Saws: Gender in the Modern Horror Film, Carol J. Glover argued that horror movies were actually about women fighting against the oppressive male gaze (represented as the killer point-of-view cam in slashers like Halloween and Black Christmas) and taking back their agency from male oppressors. This is the book that coined the term "final girl," referring to the horror movie heroine who survives the slaughter and defeats the bad guy.</p>
+        <p>Filmmakers paid attention. Wes Craven's New Nightmare (1994) deconstructed the earlier Nightmare on Elm Street films with a meta story about Freddy Krueger entering the real world to attack Heather Langenkamp, the actress who played the final girl in the first Nightmare movie. Two years later, Craven pounded the last nail into the coffin with Scream. This 1996 slasher movie, about a group of slasher-obsessed teens getting slashed by a masked slasher-obsessed slasher, proudly skewered the cliches and "rules" of the slasher genre, like "don't have sex," "don't drink or do drugs," and "never say 'I'll be right back.'"</p>
+        <p>Since then, the meta slasher has killed the traditional slasher and now runs amok wearing its victim's skin. In works like The Cabin in the Woods, Tucker & Dale vs. Evil, You're Next, Behind the Mask: The Rise of Leslie Vernon, the many Scream sequels, Scream Queens, Final Girl (2015), The Final Girls (2015), and the upcoming The Last Final Girl and The Final Girl Support Group (based on a novel with the same title), self-aware, often snarky characters talk about slasher movies while getting slashed in slashers that riff on slasher tropes. If anything, the meta slasher genre is calcifying into its own set of cliches. You can only explain what a final girl is so many times before the audience gets bored.</p>
+        <p>Teenage Sex and Death at Camp Miasma is made by someone who knows all this, and knows that you know all this. It takes for granted that the audience has heard the term "final girl" and does not stop to explain what it is. It takes for granted that the audience has absorbed and/or produced many hundreds of posts and memes and YouTube videos and podcast episodes about horror, and horror tropes, and whether horror tropes are misogynistic or empowering, and whether cinematic nudity is sex-positive or male-gazey, and whether age gap relationships are inherently exploitative, and whether BDSM is liberating or merely codifying abuse, and whether polyamory is decolonizing romance or regressing into a Handmaid's Tale-style mini sex <span class="anno">cult<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">邪典，指拥有狂热小众粉丝群、常被主流忽视的作品或作者。</span></span>. It takes for granted that we have gone so deep into the discourse of culture and horror and sex, on the screen and off of it, until the discourse itself has become the focus, sucking all our energy and emotion into it, leaving us tired and stressed out and frigid and lonely.</p>
+        <p>That's how Kris is, before she learns how to get out of her own head. And if you're a queer horror fan who spends too much time on the internet, you might have that in common with Kris. (And if you're reading this article, you're probably a little bit like that, too.)</p>
+        <p>Less of a meta-slasher, Teenage Sex and Death at Camp Miasma is almost a <span class="anno">meta-meta<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Meta-meta，对「元叙事」再作自反戏仿的层叠手法；本片被称「元-元砍杀片」。</span></span>-slasher about meta-slashers, and the perils of over-analyzing the things you love. It asks us to acknowledge the contradictions, the discomfort, and move on. Thinking will only take you so far; you have to go on and live a little. Stop worrying so much. Embrace bimbo mindset. Get laid and go outside.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 5: AUTOSTRADDLE ============ -->
+  <article class="review" data-stance="praise">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"'Teenage Sex and Death at Camp Miasma' and the Inherent Sensuality of Slashers"</p>
+        <h3 class="r-pub">Autostraddle（酷儿女性媒体）</h3>
+        <div class="r-sub">作者 <span class="author">Nic Anstett</span> · 2026 年 8 月 31 日 · <a class="orig-link" href="https://autostraddle.com/teenage-sex-and-death-at-camp-miasma-and-the-inherent-sensuality-of-slashers" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">酷儿视角</span>
+        <span class="stance praise">赞誉 · 情欲</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>这并不是说申布伦的最新作比前作更少思辨或智性。我甚至认为《瘴气营地》或许是他们迄今最成熟的作品，而基调的转变，仅仅说明他们懂得自己游弋其中的这个类型。除少数例外，砍杀片并非那种引发恐惧、让人夜不能寐的恐怖电影。不，砍杀片是一种更原始的快感，关乎身体感受与释放，而非拨弄你脑中幽暗的角落。尽管该类型深处沸腾着清教徒式的训诫，观看《十三号星期五》或其众多仿作，体验却绝非贞洁。血与汗交融，肉体在快感中扭动，与血肉横飞的尸体一样常见。即便是这些电影滥用到令人反胃的"跳跃惊吓"，也依赖张力的累积与身体迅速的释放。我的意思是，瘴气营地系列那个蒙面杀手叫"小死亡"(Little Death)，这背后是有原因的。</p>
+        <p>正是这种对砍杀类型内在情欲本质的理解，把申布伦的电影与过去几十年涌现的众多"元砍杀片"区分开来。《瘴气营地的青春性事与死亡》无意于辨认桥段或批评类型趋势，它更是一部关于这些桥段所唤起的感官与幻想的电影。是的，申布伦让 Ray Blanchard 的《瘴气营地》在它对任何存在于清晰性别/性向二元之外的人或物的公然不适上，mirror（映照）《睡眠营》——但它的恐跨是如此露骨而荒诞，以至于几乎不再成为一个可被讨论的"点"。小死亡（Jack Haven 饰）曾是瘴气营地的一名营员，被两个"雌雄同体"的父母养大，要他"一周里每天都是不同性别"，他在片中被溺死，被"片中片"当作一种必然且显然的结局——只因他敢以酷儿之身存在。当克里丝与比利终于坐下来一起看初代《瘴气营地》，克里丝刚要指出银幕上展开的恐跨套路，便被立刻"嘘"住。我们不需要被提醒。Carol J. Clover 的《男人、女人与电锯》问世已近 35 年。那令人冒犯的侧文本，已是全然的明示文本。Blanchard 那卡通般简化且冒犯的思维方式，对任何愿意多想两秒的人而言都显而易见。</p>
+        <p>尽管申布伦确实让小死亡有一场华丽编排、极具宣泄感的杀戮狂潮（配着 Counting Crows），《瘴气营地的青春性事与死亡》也不是一则关于酷儿重夺 (reclamation) 的故事。若说有什么，那正是克里丝那些极度愤世嫉俗的制片人想让这样一部电影走的路。相反，让克里丝（以及电影本身）感兴趣的，是初代影片里那个转瞬即逝的时刻——当逼近的小死亡，映在比利·普雷斯利失贞时的眼眸中。申布伦究竟把克里丝对这一影像的痴迷带向何方，我在评论里绝不愿剧透，但正是这种对死亡与性之人工性的痴迷，让《瘴气营地》真正活了过来。</p>
+        <p>克里丝的性生活，与其说是压抑的源头，不如说是不满与挫败。她的长期伴侣似乎对自家的男友——一个长发、蠢笨、恰如其分地名叫 Thor 的 himbo——更感兴趣；但她的性阻塞，埋得更深：在身体与快感之间一种本质的断裂。高潮，唯有通过解离与幻想的组合方能达成。克里丝与申布伦都没有把这种体验称为"dysphoria（性别不安）"，但我极少见到比这更好的、关于在跨性别身体中做爱所带来的那种"不适与快感并存"之恼人体验的描绘或描述。逃进幻想、逃进嬉戏，或逃进电影恐怖，成了抵达高潮的关键。《瘴气营地的青春性事与死亡》那出人意料地欢欣的情感弧线，在于克里丝找到了一个不仅理解、而且准备好回应她性需求的人。其结果之性感与宣泄，足以让 Ray Blanchard 心脏病发。我很想滔滔不绝地夸赞申布伦这部最新作里诸多 camp、情色而惊悚的妙处（我几乎还没谈到吉莲·安德森在片中到底有多好），但再说下去，就会剥夺你亲自见证这场出人意料地振奋人心的砍杀—性爱狂欢的机会。正如它效仿的众多嗜杀电影，观看《瘴气营地》既是一场智识的体验，也是一场身体的体验。相信我，你值得这次释放。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>This isn't to say that Schoenbrun's latest is any less heady or intellectual than their last films. I'd argue Camp Miasma is maybe their most sophisticated work to date and the shift in tone simply showcases they know the genre they are playing in. With few exceptions, the slasher film is not a dread-inducing, can't-sleep-at-night horror movie. No, slashers are a baser pleasure, concerned with bodily sensation and release rather than tickling the dark corners of your brain. Despite the clearly puritanical messaging boiling beneath much of the genre, the experience of watching Friday the 13th or its many imitators isn't exactly a chaste one. Blood mixes with sweat, and bodies writhing with pleasure are just as common a sight as carved open corpses. Even the much-maligned jump-scare that these films employ ad nauseam relies on a buildup of tension and quick bodily release. I mean, there's a reason the masked killer of the Camp Miasma franchise is called "Little Death." It's this understanding of the inherent sensuality of the slasher genre that sets Schoenbrun's film apart from the many meta slashers that have appeared over the last few decades. Teenage Sex and Death at Camp Miasma isn't interested in identifying tropes or critiquing genre trends as much it is a movie about the sensations and fantasies that they evoke. Yes, Schoenbrun has Ray Blanchard's Camp Miasma mirror Sleepaway Camp in its blatant discomfort of anything or anyone that exists outside of a clear gender/sexual binary, but its transphobia is so blatant and absurd that it almost ceases to be a point of discussion. Little Death, played by Jack Haven, was a former Miasma camper who was raised by two "hermaphrodite" parents to be a "different gender every day of the week," whose death by drowning is treated by the movie-within-a-movie as an inevitable and obvious outcome to daring to exist in a queer body. When Kris and Billy finally sit down to watch the original Camp Miasma together, Kris is quickly shushed when they try to point out the transphobic tropes unfolding on screen. We don't need to be reminded. Carol J. Clover's Men, Women, and Chainsaws is almost 35-years-old. The offensive subtext is just full-on text. Blanchard's cartoonishly reductive and offensive thinking is apparent to anyone who is willing to think on it for more than two seconds. While Schoenbrun does allow Little Death one gloriously choreographed and cathartic kill spree set to Counting Crows, Teenage Sex and Death at Camp Miasma isn't a story of queer reclamation either. If anything, that's the route Kris's grossly cynical producers would want a film like this to take. Instead, what interests Kris (and the movie itself) is the split-second moment in the original film when an approaching Little Death is reflected in Billy Presley's eyes as her character loses her virginity. Where exactly Schoenbrun takes Kris's fascination with this image is an experience I wouldn't dare spoil in this review, but it's this fascination with the artifice of death and sex that Camp Miasma truly comes to life. Kris's sex life is not so much a source of repression as it is dissatisfaction and frustration. Her long-term partner seems much more interested in their boyfriend, a long-haired himbo appropriately named Thor, but her sexual blockage sits much deeper in an inherent disconnect between her body and pleasure. Orgasm is only achievable through a combination of disassociation and fantasy. Neither Kris nor Schoenbrun call this experience "dysphoria," but I've rarely seen a better depiction or description of navigating the maddening combination of discomfort and pleasure that comes with sex in a trans body. Escape into fantasy, into play, or into cinematic horror becomes the key to climax. The surprisingly joyful emotional arc of Teenage Sex and Death at Camp Miasma comes in Kris finding someone who not only understands their sexual needs but is prepared to meet them. The result is sexy and cathartic in ways that would give Ray Blanchard a heart attack. I would love to gush about the many campy, erotic, and thrilling delights of Schoenbrun's latest (I've barely even talked about how damn good Gillian Anderson is in it), but to say too much more would rob you of the chance to witness this disarmingly uplifting slasher-sex romp for yourself. Like the many stab-happy movies it imitates, watching Camp Miasma is as much a physical experience as it is an intellectual one. Trust me, you deserve this release.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 6: CHICAGO READER ============ -->
+  <article class="review" data-stance="praise">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"Review: Teenage Sex and Death at Camp Miasma"</p>
+        <h3 class="r-pub">《芝加哥读者》Chicago Reader</h3>
+        <div class="r-sub">作者 <span class="author">Shira Friedman-Parks</span> · 2026 年 8 月 13 日 · <a class="orig-link" href="https://chicagoreader.com/film-tv/movie-review/review-teenage-sex-and-death-at-camp-miasma" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">正面</span>
+        <span class="stance praise">赞誉 · 希望</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>《荧屏在发光》（2024）名导简·申布伦，带着同样对媒介的痴迷，带来了《瘴气营地的青春性事与死亡》。片中，汉娜·爱宾德的克里丝（她/他们，29 岁，多角关系，有点太爱电影了）抓住机会，去拍第 15 部《瘴气营地》——那个 1980 年代的砍杀系列（类似《十三号星期五》(1980)、《睡眠营》(1983) 等）。在把她那部《惊魂记》(1960) 从"淋浴帘视角"翻拍、小获成功后，克里丝被请来"觉醒化"《瘴气营地》，因其近期因恐跨主题而遭抵制。</p>
+        <p>克里丝寻访初代《瘴气营地》的"最终女孩"饰演者——也是她童年时的性觉醒对象——吉莲·安德森饰演的比利·普雷斯利（狂野、隐居、抽大麻）。她穿越冬日仙境般、太平洋西北腹地荒无人烟之地，发现比利就住在首作那座夏令营的布景上。克里丝偶然闯入一间电影院；她最爱的那一幕——Amanda Fix 饰演的年轻比利（鹿眼、怅惘、带着撩人的红兜帽）失去童贞——已被排上放映机。</p>
+        <p>克里丝立刻迷上了比利，而比利毫无兴趣谈论"酷儿性作为怪物性"或《瘴气营地》杀手小死亡（Jack Haven 饰，每天变换性别、举着一根笨重长矛）背后的恐跨。比利争辩道，"肉与体液"，才是这些电影的本质，才是让人一再回来的东西。她敦促克里丝从这种学术束缚中解放自己的观影体验。一场诱惑就此开始。</p>
+        <p>汉娜·爱宾德演活了一个真正笨拙、书呆、痴迷电影的女同性恋，复活了由伟大的 Cheryl Dunye 所定义的那一原型。与她对电影系列及批评分析的投入相对，布景设计直接出自黑色电影的娃娃屋：营地小屋与窗格，衬着手工绘制的、被剪下的背景（一种前 CGI 时代的老技术），助长了"真实"（经理、资金要求、Zoom 会议）与"奇幻"之间的模糊。</p>
+        <p>于是电影滑入一场心理情欲的、情节剧式的狂欢，一场关于 filmmaking、性与死亡的元评论。鲜血如间歇泉般 glam（华丽）喷涌。电影从洞里冒出来。最好的性，来自被长矛刺穿胸膛。对《荧屏在发光》的忠实拥趸而言，本片的叙事或许过于线性、笑料过于甜腻，但这则出人意料地充满希望的、对 camp 式恐怖与电影零食的颂歌，仍有太多值得喜爱。R 级，112 分钟。院线广泛上映。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>Director Jane Schoenbrun of I Saw the TV Glow (2024) fame returns equally media-obsessed with Teenage Sex and Death at Camp Miasma. In it, Hannah Einbinder's Kris (she/they, 29, poly, likes movies a little too much) jumps at the chance to make the 15th film in the Camp Miasma 80s slasher franchise (à la Friday the 13th (1980), Sleepaway Camp (1983), etc.). After the mild success of her Psycho (1960) remake from the perspective of the shower curtain, Kris is brought on to wokeify Camp Miasma after recent backlash for its transphobic themes.</p>
+        <p>Kris seeks out the original Camp Miasma's final girl actor—also her childhood sexual awakening—Gillian Anderson's Billy Presley (wild, reclusive, weed-smoking). Trekking through winter wonderland–middle of nowhere Pacific Northwest, she finds Billy living on the same summer camp set of the very first film. Kris stumbles upon a movie theater; her favorite scene, in which Amanda Fix's young Billy (doe-eyed, wistful, cunty red hood) loses her virginity, has been queued on the projector.</p>
+        <p>Kris is immediately enamored with Billy, who has no desire to talk about queerness as monstrosity or the transphobia behind Camp Miasma's villain, Jack Haven's Little Death (changes gender every day, holds an unwieldy spear). "Flesh and fluids," Billy argues, is what the films are, what keeps people coming back. She urges Kris to free herself of such academic constraints in moviegoing. A seduction begins.</p>
+        <p>Hannah Einbinder plays a true awkward, nerdy, movie-obsessed lesbian, reviving the archetype best defined by the great Cheryl Dunye. Against her devotion to the film franchise and critical analysis, the set design is straight out of a noir dollhouse: Camp cabins and windowpanes are framed against hand-painted, cut-out backdrops (an old, pre-CGI technique), contributing to this blurring between the real (managers, funding requirements, Zoom meetings) and the fantastical.</p>
+        <p>And so the film devolves into a psychosexual, melodramatic romp, a metacommentary on filmmaking, sex, and death. The blood spurts are geyser-glam. The movies come out of a hole. The best sex comes from being stabbed through the chest. Devotees of TV Glow may find the narrative too linear and the gags too saccharine, but this surprisingly hopeful ode to campy horror and movie snacks offers up a lot to love. R, 112 min. Wide release in theaters.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 7: THE SEATTLE TIMES ============ -->
+  <article class="review" data-stance="praise">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"'Teenage Sex and Death at Camp Miasma' review: An instant horror classic"</p>
+        <h3 class="r-pub">《西雅图时报》The Seattle Times</h3>
+        <div class="r-sub">作者 <span class="author">Chase Hutchinson</span> · 2026 年 8 月 13 日 · 评级 ★★★★ · <a class="orig-link" href="https://www.seattletimes.com/?p=19850543" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">4 / 4</span>
+        <span class="stance praise">赞誉 · 经典</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <p>在编导简·申布伦这部令人震撼、大胆而情色的《瘴气营地的青春性事与死亡》里，生活与电影的多重矛盾被袒露在我们面前。这是一部深切切入我们与艺术、与自我之关系的恐怖片，捕捉那些喷涌而出的欲望与焦虑；它不仅是今年最血腥好玩的电影之一，也是其最出人意料、最独特地美丽的之一。</p>
+        <p>对那些看过申布伦前作——忧郁的《我们都要去世界的尽头》与犀利的《荧屏在发光》——的人而言，这并不意外；但此处他们纵情释放的，是大量令人振奋的新方式。申布伦的最新作，不仅呈现了他们与摄影指导 Eric Yue 迄今最佳的视觉——包括一段以实景为主、令人屏息的开场血泉喷涌，以及一场感觉像对近期恐怖佳作《In a Violent Nature》俏皮戏仿的疯狂杀戮狂潮——更有一条"寻找快感"的线索，既彻底诚挚，又极富唤起力。它傻气而甜美，没错，却也令人心碎，施下一道你只愿永不破灭的咒。</p>
+        <p>故事设于太平洋西北地区，全部围绕克里丝（由<span class="anno">《绝望写手》<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">Hacks，HBO 喜剧剧集(2021—)，汉娜·爱宾德凭此获艾美奖而走红。</span></span>的汉娜·爱宾德完美饰演）展开：一位备受赞誉的独立导演，在一系列获评论喝彩的小片之后，受命重启一个争议不断的砍杀系列。她决定重新联络原版电影的"最终女孩"比利·普雷斯顿，后者已隐居在世界尽头般的外景地、即原片拍摄处。由出色的吉莲·安德森（《X 档案》）赋予生命的比利，最终向克里丝袒露的，不仅是电影，更是她自己。当虚构恐怖与现实的界线模糊，申布伦既欢欣地拥抱、又戏谑地刺穿了影片自身的寓言本性。</p>
+        <p>那份拥抱，虽盈满快感，却并非没有痛楚。这是一部关于"恐怖电影如何既是探索与兴奋之所、却也对其最被吸引的某些观众（如女性、酷儿与跨性别者）施以残忍"的电影。那么，一个人该如何理解此类艺术所能具有的吸引力与其所提供的颠覆潜能，同时又反思它仍可能欠缺之处？没有单一答案；但对申布伦而言——再次挖掘那些隐藏、或被世界强迫隐藏的角色碎片——答案在于：在欲力 (libidinal) 之中寻得解放性。"瘴气营地"与其说是对恐怖的 reclaim（重夺），不如说是对那些在所有观者想象中存续之片段的复活。它不是要遮掩什么，而是把某种鲜活而崭新的东西带到表面。</p>
+        <p>你能在一段出众的瞬间里，看见这令人惊叹而饱含爱意的 action：爱宾德被定格在一个迷人的特写中，她那些时机绝妙的笑话，让位于某种更诚挚的东西。这一幕既让一切慢下来，又让一切加速，把影片此前探索的一切系在一起，同时让大量新意义喷涌而出。其后有更喧闹的时刻，包括一场世界在眼前彻底裂开的绝妙终章；但正是这更安静、更亲密的一幕，让爱宾德与申布伦的才华交汇，造出某种魔幻。</p>
+        <p>尽管格局不大、主要发生在一处地点，《瘴气营地的青春性事与死亡》却包罗万象，堪称一场对类型的欢欣解构，带着对其自身与角色的深层爱意。从它杀手级的开场插曲到欢愉的终音符，这是一部欢快、元文本、且悄然动人的电影奇迹，已然像一代人的恐怖经典。</p>
+        <p class="note">《瘴气营地的青春性事与死亡》★★★★（满分四星）。主演：汉娜·爱宾德、吉莲·安德森、Jack Haven、Eva Victor、Jasmin Savoy Brown、Patrick Fischler、Amanda Fix、Zach Cherry、Sarah Sherman、Dylan Baker。编导：简·申布伦。112 分钟。R 级（血腥暴力、恐怖、性内容、裸露、毒品及部分语言）。8 月 13 日于 SIFF Cinema Uptown（35 毫米）与 Regal Meridian 上映。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p>In "Teenage Sex and Death at Camp Miasma," the electrifying, boldly erotic new film from writer-director Jane Schoenbrun, the many contradictions of life and cinema are laid bare before us. A horror movie that cuts deeply into our relationship to both art and self, capturing the desires and anxieties that come bursting out, it's not just one of the most bloody fun films of the year, but one of its most unexpectedly, distinctly beautiful.</p>
+        <p>While this should come as no surprise to those who've seen Schoenbrun's previous films, the melancholic "We're All Going to the World's Fair" and the incisive "I Saw the TV Glow," there are plenty of exhilarating new ways they let loose here. Schoenbrun's latest boasts not only their and cinematographer Eric Yue's best visuals to date — including a breathtaking opening sequence of a blood geyser made largely practically and a madcap murder spree that feels like a playful riff on the recent horror gem "In a Violent Nature" — but also a through line about finding pleasure as radically earnest as it is evocative. It's silly and sweet, yes, though also shattering, casting a spell you can only wish would never break.</p>
+        <p>Set in the Pacific Northwest, this all centers on Kris (perfectly played by Hannah Einbinder of "<span class="anno">Hacks<sup class="anno-badge">注</sup><span class="anno-pop" hidden="None">HBO 喜剧《绝望写手》(2021—)，汉娜·爱宾德凭此剧获艾美奖突破。</span></span>"), an acclaimed independent filmmaker who, following a series of critically heralded smaller films, has been tasked with rebooting a divisive slasher franchise. She decides to reconnect with the original film's "final girl," Billy Preston, who has secluded herself away from the world at the remote location where the original film was shot. Brought to life by a brilliant Gillian Anderson ("The X-Files"), Billy ends up revealing much to Kris not just about cinema, but about herself. As the lines between fictional horror and reality blur, Schoenbrun delightfully skewers their film's allegorical nature just as they jubilantly embrace it.</p>
+        <p>That embrace, while overflowing with pleasure, isn't without pain. This is a film about how horror cinema can be a place of exploration and excitement but also cruelty toward some of the audiences (such as women, queer and trans people) who are most drawn to it. How does one then make sense of the allure such art can have and the subversive potential it offers while also reflecting on where it may still fall short? There is no singular answer, but for Schoenbrun, once more excavating the parts of their characters that hide or are forced to hide from the world, it's about finding the liberatory in the libidinal. "Camp Miasma" is less a reclamation of horror and more a resurrection of its parts that have endured in the imagination of all who see it. It's not about papering over anything, but bringing something vibrant and new to the surface.</p>
+        <p>You can see this in astounding and affectionate action during a standout moment where Einbinder is held in captivating close-up, all of her wonderfully timed jokes giving way to something more sincere. It's a scene that both slows everything down and speeds it all up, tying everything the film had been exploring together while also letting plenty of new meaning come bursting out. There are louder moments that follow, including a fantastic finale where the world of the film fully cracks open in front of us, but it's this quieter, more intimate one where Einbinder and Schoenbrun's talents come together to make something magical.</p>
+        <p>Though small in scope, taking place primarily at one location, "Teenage Sex and Death at Camp Miasma" contains multitudes, proving to be a gleeful deconstruction of genre that brings a deep love for it and its characters. From its killer opening needle drop to its joyous final note, it's a mirthful, metatextual and quietly moving miracle of a movie that already feels like a horror classic for a new generation.</p>
+        <p>'Teenage Sex and Death at Camp Miasma' ★★★★ (out of four). With Hannah Einbinder, Gillian Anderson, Jack Haven, Eva Victor, Jasmin Savoy Brown, Patrick Fischler, Amanda Fix, Zach Cherry, Sarah Sherman, Dylan Baker. Written and directed by Jane Schoenbrun. 112 minutes. Rated R for bloody violence, gore, sexual content, graphic nudity, drug use and some language. Opens Aug. 13 at SIFF Cinema Uptown in 35mm, Regal Meridian.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 8: SOUNDS OF CINEMA ============ -->
+  <article class="review" data-stance="critique">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"Review: Teenage Sex and Death at Camp Miasma (2026)"</p>
+        <h3 class="r-pub">Sounds of Cinema（广播影评专栏）</h3>
+        <div class="r-sub">第 #1115 期 · 2026 年 9 月 6 日 · 立场：批评 · <a class="orig-link" href="https://soundsofcinema.com/?p=14904" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">混合偏负</span>
+        <span class="stance critique">批评 · 过载</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <h4>可取之处</h4>
+        <p>电影人简·申布伦此前的《我们都要去世界的尽头》与《荧屏在发光》，探索了怀旧、身份以及我们与媒介的关系，但它们也往往趋于抽象。《瘴气营地的青春性事与死亡》探索同样的主题，却（相对而言）更易接近。影片以一种直白而私人的方式，处理申布伦那些为人熟悉的主题。由汉娜·爱宾德饰演的主角，显然是申布伦的替身：一位带点主流热度的独立导演，以智识方式对待自己的作品，却又对剥削式电影的廉价刺激怀有情爱。本片部分关乎：影迷如何被我们最具塑形力的电影经验——尤其是早年那些——所萦绕。爱宾德的角色痴迷于质问这部复古砍杀片如何塑造了她，而吉莲·安德森饰演的女演员则困在 1980 年代。影片与主角对经典砍杀片的爱，因愧疚而变得复杂。《瘴气营地的青春性事与死亡》部分关乎：我们对肉体与杀戮的原始胃口，与我们想做"有良知消费者"的冲动之间的碰撞。某些经典砍杀片是厌女与恐跨的，而本片把"享受早期电影时偶发的张力"戏剧化了。那份愧疚，与主角的被压抑性欲相呼应。所有这些点子，都在汉娜·爱宾德细腻的表演中运作着。吉莲·安德森则张扬得多，而且非常有趣。表演近乎 camp，但安德森身上有股人性，使她的角色真实。</p>
+        <h4>不足之处</h4>
+        <p>《瘴气营地的青春性事与死亡》点子塞得太满，或许过多了。那些私密的概念引入得很好、交织得能增益整体，但电影人试图塞进更多点子。本片还试图讽刺好莱坞对知识产权的执念，以及现实与虚构彼此渗流的那种方式。影片的这些面向并不奏效。它们稀释了电影最有趣的部分，使影片愈发 incoherent（ incoherent 不连贯）。本片或许打动不了许多恐怖片观众。尽管它浸在类型之中，这与其说是一部恐怖片或砍杀片，不如说是一个性觉醒的故事。</p>
+        <h4>小结</h4>
+        <p>《瘴气营地的青春性事与死亡》做了很多——其中有些颇有趣——但影片最终在其野心之重下塌垮了。它算不上什么恐怖片，却会吸引那些喜欢把该类型"智识化"的观众。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p><b>What Works:</b> Filmmaker Jane Schoenbrun's previous films We're All Going to the World's Fair and I Saw the TV Glow explored nostalgia and identity and our relationship to media but they also tended toward abstraction. Teenage Sex and Death at Camp Miasma explores the same themes but it is (comparatively) more accessible. The film deals with Schoenbrun's familiar themes in a straightforward and personal way. The protagonist played by Hannah Einbinder is obviously a stand-in for Schoenbrun: an indie filmmaker with some mainstream heat who approaches their work intellectually but has an affection for the lowbrow thrills of exploitation cinema. Teenage Sex and Death at Camp Miasma is partly about the way cinephiles are haunted by our formative cinematic experiences, especially those of an early age. Einbinder's character is obsessed with interrogating how this retro slasher film shaped her while the actress played by Gillian Anderson is stuck in the 1980s. The film and the protagonist's affections for classic slasher films are complicated by guilt. Teenage Sex and Death at Camp Miasma is partly about the collision between our base appetites for carnality and carnage and our urge to be conscientious consumers. Some of the classic slasher films were misogynistic and transphobic and this film dramatizes the tension that sometimes arises in enjoying movies from an earlier era. That guilt dovetails with the protagonist's repressed sexuality. All these ideas are at play in Hannah Einbinder's subtle performance. Gillian Anderson is much showier and she's very funny. The performance is almost camp but there is a humanity to Anderson that keeps her character real.</p>
+        <p><b>What Doesn't:</b> Teenage Sex and Death at Camp Miasma is full of ideas, perhaps too many. The intimate concepts are introduced well and intertwined in a way that enhances the whole but the filmmakers try to incorporate even more ideas. Teenage Sex and Death at Camp Miasma also attempts to satirize Hollywood's regard for intellectual property and the way reality and fiction bleed together. These aspects of the film don't work. They dilute the most interesting aspects of the movie and the film becomes increasingly incoherent. Teenage Sex and Death at Camp Miasma may not play for a lot of horror audiences. Although it's steeped in the genre, this is less a horror film or a slasher picture than it is a story of sexual awakening.</p>
+        <p><b>Bottom Line:</b> Teenage Sex and Death at Camp Miasma is doing a lot—some of it very interesting—but the film ultimately buckles under the weight of its ambitions. It's not much of a horror picture but it will appeal to viewers who like to intellectualize the genre. Episode: #1115 (September 6, 2026)</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ REVIEW 9: SALON (EXCERPT) ============ -->
+  <article class="review" data-stance="critique">
+    <div class="r-head">
+      <div>
+        <p class="r-orig-title">"Teenage Sex and Death at Camp Miasma withers in metaphor Hell"</p>
+        <h3 class="r-pub">《沙龙》Salon</h3>
+        <div class="r-sub">作者 <span class="author">Coleman Spilde</span> · 2026 年 8 月 26 日 · 立场：批评 · <a class="orig-link" href="https://www.salon.com/2026/08/26/teenage-sex-and-death-at-camp-miasma-withers-in-metaphor-hell/" target="_blank" rel="noopener">原文链接 ↗</a></div>
+      </div>
+      <div class="r-right">
+        <span class="r-rating">全文</span>
+        <span class="stance critique">批评 · 隐喻过载</span>
+      </div>
+    </div>
+    <div class="r-body">
+      <div class="toggles">
+        <button class="on" data-t="zh">译文</button>
+        <button data-t="en">原文</button>
+        <button data-t="both">对照</button>
+      </div>
+      <div class="translation">
+        <div class="note">说明：此前 Salon 官网反爬仅能呈现摘录，现据用户提供的本地存档补全为全文译文。</div>
+        <p><b>副题：</b><span class="anno">简·申布伦<sup class="anno-badge">注</sup><span class="anno-pop" hidden>美国跨性别电影人、编剧、导演，本片编导。以《我们都要去世界的尽头》(2021)、《我看见电视光晕》(2024) 与《瘴气营地》(2026) 组成「媒介三部曲」，主题围绕身份、媒介与酷儿体验。</span></span>的第三部长片向<span class="anno">砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Slasher，以面具杀手连环屠杀青年为主角的恐怖亚类型，1980 年代随《十三号星期五》《月光光心慌慌》等兴盛。</span></span>致敬并解析它——却跳过了论点本身</p>
+        <p>在每个说英语的人生命中的某个时刻，他们都会学到法语短语"la petite mort"（<span class="anno">小死亡<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中蒙面杀手 Little Death。「la petite mort」(法文「小死亡」)是性高潮的委婉语，与片名中的「性事与死亡」形成双关。</span></span>）的含义。字面翻译，它的意思是"小小的死"，通常指在性高潮之后即刻涌来的那种感觉。鉴于这个短语与生俱来的诗意，学者、作家、情场老手，或许还有那些太过好为人师的电影人，常用它来传达生命中最炽烈欢愉那转瞬即逝的强度。但最惹人烦的是，"<span class="anno">小死亡<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中蒙面杀手 Little Death。「la petite mort」(法文「小死亡」)是性高潮的委婉语，与片名中的「性事与死亡」形成双关。</span></span>"也是那些啜着黑咖啡、叼着烟、戴着贝雷帽的年轻人最爱挂在嘴边的词——他们迫不及待地想提醒你，这个短语也可以暗指自己内心深处已经死掉的那一部分——被存在的痛苦所掐灭。"你难道看不出来吗？"他们在吞吐 Parliament 香烟的间隙问道，"万物皆有双重含义。"</p>
+        <p>这正是为什么，当我第一次听说编剧兼导演简·申布伦最新影片《瘴气营地的青春性事与死亡》里那个元虚构的反派名叫"小死亡"（<span class="anno">Little Death<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中杀手名，源自法文「la petite mort」(字面「小死亡」)，是性高潮的委婉说法，呼应片名主题。</span></span>）时，我的身体不由自主地猛然一缩。哎呀，糟了。你看，倒不是"小死亡"本身不是个优美、抒情的短语；只是它的新鲜感消磨得很快。它并不是那种你愿意把整部电影都挂在上面的隐喻，唯恐它相对的简单，在长片诸多部件的分量之下塌垮。话又说回来，毫不退缩、有时甚至自命不凡的智识主义，本就是<span class="anno">申布伦<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Jane Schoenbrun，美国跨性别导演／编剧，「媒介三部曲」(《我们都要去世界的尽头》《我看见电视光晕》《瘴气营地》)的作者。</span></span>整个作品体系的一大面向。</p>
+        <p>在每一个转折处，申布伦都把这部电影活埋，把一层又一层的元潜文本堆到它身上。而作为观众，去挖掘那些层次倒也不算什么费力的事——毕竟它们薄如蝉翼——但在某个时刻，人会挖得厌倦，因为心里清楚，埋在底下的那部一度充满希望的电影，早已经被削成了骨架。</p>
+        <p>仅在过去几年里，申布伦就已证明自己是电影界最有前途的新声之一，在一个仍由那些留着怪异发型、顺性别、异性恋的白人男性所主导的行业里，为一位主流<span class="anno">跨性别<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Transgender，性别认同与出生指定性别不一致；申布伦以跨性别视角重构砍杀类型。</span></span>电影人开拓出可观的空间。他们的电影奇异而想象瑰丽，像一团团半梦半醒、依稀记得的云雾，在你整个下午试图解读其意时，轻轻咬啮着你的脑后——直到申布伦亲自为你打下一束聚光灯。随之而来的"掀地毯式反转"（rug-pull）之感，堪比努力回想一位演员的名字。你向朋友们保证不需要他们帮忙；只要再想一秒钟就能想起来。"别告诉我，别告诉我！"你恳求道。然后，他们还是带着一脸得意的神色告诉了你，剥夺了你靠自己想通而获得的那种满足感。</p>
+        <p>可惜，《瘴气营地的青春性事与死亡》并无二致。影片讲述年轻的<span class="anno">酷儿<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Queer，泛指非异性恋规范的身份与欲望；本片从酷儿视角重读砍杀类型与青春情欲。</span></span>电影人<span class="anno">克里丝<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中青年导演 Kris，由汉娜·爱宾德(Hannah Einbinder)饰演；从小痴迷《瘴气营地》，被片方聘来重启这一 IP。</span></span>（Kris，汉娜·爱宾德 饰）受命以更"觉醒"的声口，重启那部复古<span class="anno">砍杀片<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Slasher，以面具杀手连环屠杀青年为主角的恐怖亚类型，1980 年代随《十三号星期五》《月光光心慌慌》等兴盛。</span></span>系列<span class="anno">《瘴气营地》<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中虚构的 1980 年代砍杀片系列 Camp Miasma，本片故事围绕其重启展开，是「戏中戏」核心 IP。</span></span>——它介于《十三号星期五》与《睡营》之间。克里丝寻访到该系列首作中那位离群索居的"<span class="anno">最终女孩<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Final Girl，砍杀片套路中最后幸存、常与杀手正面交锋的女性角色原型，本片中由比利出演。</span></span>"<span class="anno">比利·普雷斯利<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中初代「最终女孩」比利(Billy)，由吉莲·安德森(Gillian Anderson)饰演；拒演续集后隐居在废弃拍摄营地。</span></span>（Billy Presley，吉莲·安德森 饰），希望说服<span class="anno">比利<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中初代「最终女孩」比利(Billy Presley)，由吉莲·安德森饰演，是《瘴气营地》原作的象征性人物。</span></span>出演重启版。痴迷媒介、聚焦身份，克里丝的神经质立刻与比利冷静、南方做派的举止形成对峙；两名女性在冬日树林里比利的家中依偎一团，很快便发现了由<span class="anno">《瘴气营地》<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中虚构的 1980 年代砍杀片系列 Camp Miasma，本片故事围绕其重启展开，是「戏中戏」核心 IP。</span></span>系列电影锻造出的、强烈的身体联结。</p>
+        <p>克里丝起初抗拒她们之间的这种化学反应，为了工作而将其推开。但比利锲而不舍，耐心地帮克里丝穿过她性压抑（"小死亡"）的迷雾，走向性满足（"小死亡"）。一次小小的死，引出下一次；直到片中的"小死亡"找上门来，他血淋淋的鱼叉尖上，还挂着十到十七个半成品的隐喻。</p>
+        <p>申布伦的讯息传达得犹如一拳打在脸上、或一矛刺穿心脏般毫不委婉。当然，这也有其用武之地，尤其在一部部分地在戏仿那些不懂分寸的砍杀片套路的作品里。然而，申布伦的那些观察在影片里被呈现得仿佛深奥难解，塞满了自鸣得意的超现实主义，又挤满了专门用来朝本就显而易见之处挤眉弄眼、推推搡搡的视觉刺激。在每一个转折处，申布伦都把《瘴气营地的青春性事与死亡》活埋，把一层又一层的元潜文本堆到它身上，慢慢地杀死它。而作为观众，去挖掘那些层次倒也不算什么费力的事——毕竟它们薄如蝉翼——只是要解析的层次实在太多，在某个时刻，人会挖得厌倦，因为心里清楚，埋在底下的那部一度充满希望的电影，早已经被削成了骨架。</p>
+        <p>诚然，这一切本就是要点的一部分，而这也正是《瘴气营地的青春性事与死亡》如此令人恼火的一大原因。影片开头不久，比利告诉克里丝，她重启片中那部"瘴气"系列的方式"太过学院气了"。观众立刻明白，这是申布伦在拿自己那套智识化的路数开玩笑，而克里丝正是这位编导自我的化身。克里丝解释说，她知道片厂雇她仅仅是因为她是<span class="anno">酷儿<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Queer，泛指非异性恋规范的身份与欲望；本片从酷儿视角重读砍杀类型与青春情欲。</span></span>——因为只有酷儿才能重振一部过时、恐跨的砍杀片系列，而不至于招来"大取消文化"插嘴。但好莱坞那帮西装佬没意识到的是，克里丝自童年起就是个"瘴气营地"的痴迷者。她极感兴趣于：那些有问题的电影是如何被片中描绘的真实少数群体人物所重新占有（reclaim）的，又能从研读这些影片的优长处获得些什么。</p>
+        <p>克里丝把原版《瘴气营地》电影称作自己的性觉醒，却说不清究竟为什么。她所知道的，只是自己被比利那个角色在一场性爱戏里眼神中流露的神情所迷住，并且终其一生都无法把它从脑海里抹去。她想探索自己的快感，却有一道心理障碍挡着她，使她无法付诸行动。</p>
+        <p>在此，申布伦触及了<span class="anno">跨性别<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Transgender，性别认同与出生指定性别不一致；申布伦以跨性别视角重构砍杀类型。</span></span>群体内部一种非常真实、也非常有趣的共有体验，谈到了接纳自己的某一部分、却与另一部分格格不入之间的那种割裂——在克里丝身上，便是她的酷儿身份与她所习得的性欲之间的张力。（起用像爱宾德这样的顺性别演员，多少让这一点显得牵强，不过此乃题外话。）当你如此费力地与"你是谁"达成和解，而当现实生活与媒介中都朝向你倾泻着如此多的性暴力时，让自己被视作一个性欲化的存在，会是一桩相当可怕的经历。</p>
+        <p>在比利的帮助下，克里丝渐渐明白，令她兴奋的，正是"<span class="anno">最终女孩<sup class="anno-badge">注</sup><span class="anno-pop" hidden>Final Girl，砍杀片套路中最后幸存、常与杀手正面交锋的女性角色原型，本片中由比利出演。</span></span>"的幻想。她想要奔跑穿过树林，脆弱而双乳弹动。她渴求那种无助感，想要"小死亡"（叹气）那根阳具般的器具抵在她的皮肤上。她想要把自己交出去，关掉脑子，把自己释放进他人的掌控之中。但理解这一幻想与接纳它，是两回事，中间隔着一片毫无来由的羞耻之海。</p>
+        <p>正如申布伦的前两部电影那样，一旦某个宏大的点子以独特而引人入胜的方式开始成形，现实与幻想就必须模糊，迫使一层关于"媒介"的新潜文本浮现——媒介既诱人、具教化意味，又可能有害。申布伦描绘了片中那部"瘴气营地"电影里大段的段落，其导演尤为引人注目的是雷·布兰查德（Ray Blanchard）——一位现实中的性学家，他关于"自我性别认同异性恋"（autogynephilic）性欲的理论声称，对所欲求之性别的认同，会让人渴望成为那个被欲求的性别。</p>
+        <p>若说恐怖是"血肉与体液"，那么这部电影的血肉，便是一具由暧昧不清的点子构成的身体。当被切开时，松散的隐喻与半成品的寓言喷涌而出，体液将观众的衣衫染成血红。影片的身体被抽干——成了一具无生命的空壳。它那作为生命之血的点子，如今成了观众的责任。</p>
+        <p>简而言之：那个挤眉弄眼的布兰查德指涉，支撑起克里丝的羞耻——"瘴气"系列电影令她以"自我性别认同异性恋"的方式看待自己——即一个异性恋男人关于"身处险境之女性"的幻想。但无需担心，即便是完全不知道布兰查德是谁的观众，也能推想出它与更大图景之间的关联，因为这多亏了申布伦简直是逐字逐句地替我们把它"拼写了出来"。在重看某部"瘴气"续集时，克里丝掏出纸笔，把"DESIRE"（欲望）一词全大写写下，并在底下划了两道横线。</p>
+        <p>显而易见，借由《瘴气营地的青春性事与死亡》，申布伦试图将他们对恐怖片执行其主题时那种荒诞、往往相当直白的喜爱，与他们自身对智识与分析的癖好结合在一起。这一切都很好，并且按理说足以成就一部非常出色的电影——假如在所有这些点子的核心处，真有一部电影的话。但人物塑造太过薄弱，世界观也只算中等程度地有质感。那些本可把影片充实成真正有料之物的叙事元素，被弃置一旁，让位给更多的隐喻，宛若一家披萨店用光了酱料，便往饼上多撒些奶酪，指望顾客不会注意到缺了一块要害。就连那寥寥几处精美的手绘实体背景，似乎也满载着隐含的寓言。它们半奇幻的风格，几乎让人想起托马斯·金凯德（Thomas Kinkade）的作品。Kinkade。Kink-aid。比利的援助之手，助长克里丝的 kink（癖好）。小死亡。欲望。坦白说，这一切既太多，又根本不够。</p>
+        <p>影片开头不久，比利反驳了克里丝对恐怖片那种过度复杂的看法。"恐怖就是血肉与体液而已，"比利告诉她。而若有人假定此处万物皆有更深层含义——我敢打赌申布伦正是在恳求观众这样做——这恰是说明《瘴气营地的青春性事与死亡》如何跌跤的绝佳方式。这部电影的血肉便是它的身体，由暧昧不清的点子构成。当那具身体被戳、被捅、被切开时，松散的隐喻与半成品的寓言喷涌而出，体液将观众的衣衫染成血红。影片的身体被抽干——成了一具无生命的空壳。它那作为生命之血的点子，如今成了观众的责任。</p>
+        <p>尽管其中某些点子或许能引发深切的共鸣——因而具有个人意义——但这并不会使那些观察、或它们在申布伦这部孱弱电影里的执行本身变得深刻。与申布伦大多数死忠粉丝似乎所认为的相反，关于艺术的分歧并不会抵消任何一方的感受。但一如它的创造者，申布伦的电影断言媒介可以是个人身份认同的核心构成。《瘴气营地的青春性事与死亡》鼓励影片的粉丝用"你没看懂"来回击其批评者，尽管这部电影其实极易理解。他们想要保护申布伦的电影，使之免受它自身所鼓励的那种分析——那种深入、细颗粒的、会让所有潜文本分崩离析的分析。登上通往真正深刻的列车、却在"小死亡"一站下车的问题在于：若你在那里逗留得够久，便会开始忘记，生命与电影之中，远不止性与死亡。</p>
+      </div>
+      <details class="original">
+        <summary>英文原文（点击展开）</summary>
+        <p><b>Subtitle:</b> Jane Schoenbrun's third film honors and analyzes slashers — but skips the thesis</p>
+        <p>There comes a time in every English-speaker's life when they learn the meaning of the French phrase "la petite mort," an adage that, translated literally, means "the little death," and typically refers to the sensation immediately following an orgasm. Given the phrase's innate poeticism, it's often used by scholars, authors, casanovas and perhaps overly didactic filmmakers to convey the fleeting intensity of life's most burning joys. But most obnoxiously, "la petite mort" is a favorite of black-coffee-sipping, cigarette-bumming, beret-wearing young adults, eager to remind you that the phrase can also allude to a part of oneself, deep inside, that has died — snuffed out by the pain of existence. "Don't you see?" they ask between puffs of their Parliaments. "Everything has a dual meaning."</p>
+        <p>That's precisely why, upon first hearing that the metafictional antagonist in writer-director Jane Schoenbrun's latest film, "Teenage Sex and Death at <span class="anno">Camp Miasma<sup class="anno-badge">注</sup><span class="anno-pop" hidden>影片虚构的砍杀片系列《瘴气营地》的英文原名。</span></span>," is called <span class="anno">Little Death<sup class="anno-badge">注</sup><span class="anno-pop" hidden>片中杀手名，源自法文「la petite mort」(字面「小死亡」)，是性高潮的委婉说法，呼应片名主题。</span></span>, my body responded with a sharp, involuntary wince. Uh oh. See, it's not that "la petite mort" isn't a beautiful, lyrical phrase on its own; it's just that its novelty wears off quickly. It's not exactly the kind of metaphor you want to hang an entire film on, lest its relative simplicity give way under the heft of a feature film's many parts. Then again, unflinching and sometimes self-important intellectualism is a major aspect of Schoenbrun's whole oeuvre.</p>
+        <p>At every turn, Schoenbrun buries the movie alive, heaping layer upon layer of meta subtext onto it. And while excavating those layers isn't exactly a demanding task as a viewer — what with them being so thin and all — at a certain point, one gets tired of digging, knowing that the once-promising film at the bottom has already been reduced to its bones.</p>
+        <p>In the last few years alone, Schoenbrun has proven themselves one of cinema's most promising new voices, carving out a substantial space for a mainstream trans filmmaker in an industry still dominated by cisgender, heterosexual white dudes with weird haircuts. Their films are strange and gorgeously imagined, like hazy clouds of half-remembered dreams that nip at the back of your mind all afternoon as you try to interpret their meaning — until Schoenbrun shines a spotlight on it for you. The resulting rug-pull is a sensation akin to trying to remember an actor's name. You reassure your friends that you don't need their help; you'll get it with just a second to think. "Don't tell me, don't tell me!" you beg. And then, they tell you anyway with a proud look on their face, eliminating the chance to experience the satisfaction that comes with figuring something out on your own.</p>
+        <p>"Teenage Sex and Death at <span class="anno">Camp Miasma<sup class="anno-badge">注</sup><span class="anno-pop" hidden>影片虚构的砍杀片系列《瘴气营地》的英文原名。</span></span>" is, regrettably, no different. The movie finds young <span class="anno">queer<sup class="anno-badge">注</sup><span class="anno-pop" hidden>酷儿，泛指非异性恋规范的身份与欲望；本片以酷儿视角重读类型片。</span></span> filmmaker Kris (Hannah Einbinder) tasked with rebooting the retro-<span class="anno">slasher<sup class="anno-badge">注</sup><span class="anno-pop" hidden>砍杀片，1980 年代兴盛的恐怖亚类型，以面具杀手连环屠杀青年为特征。</span></span> franchise, "Camp Miasma" — a cross between "Friday the 13th" and "Sleepaway Camp" — with a more "woke" voice. Kris tracks down the reclusive final girl from the series' first film, Billy Presley (Gillian Anderson), hoping to convince Billy to star in the reboot. Media-obsessed and identity-focused, Kris' neuroses immediately counter Billy's cool, Southern demeanor as the two women huddle up at Billy's house in the wintry woods, where they soon discover a powerful physical connection forged by the "Camp Miasma" films.</p>
+        <p>Kris initially refutes their chemistry, pushing it away in favor of her work. But Billy persists, patiently trying to help Kris past the fog of her sexual repression ("la petite mort") and toward sexual satisfaction ("la petite mort"). One little death precludes the next, until the in-universe Little Death comes calling, armed with 10 to 17 more half-sketched metaphors hanging from the sharp tip of his bloody harpoon.</p>
+        <p>Schoenbrun's messaging is about as subtle as a punch to the face or a spear to the heart. There is, of course, a place for that, too, especially in a film that is a partial send-up of tactless <span class="anno">slasher<sup class="anno-badge">注</sup><span class="anno-pop" hidden>砍杀片，1980 年代兴盛的恐怖亚类型，以面具杀手连环屠杀青年为特征。</span></span> movie tropes. Yet Schoenbrun's observations are presented in the film as though they're opaque, overloaded with smug surrealism and jam-packed with visual stimuli designed to wink and nudge at the otherwise obvious. At every turn, Schoenbrun buries "Teenage Sex and Death at Camp Miasma" alive, heaping layer upon layer of meta subtext onto it, killing it slowly. And while excavating those layers isn't exactly a demanding task as a viewer — what with them being so thin and all — there are so many to parse that, at a certain point, one gets tired of digging, knowing that the once-promising film at the bottom has already been reduced to its bones.</p>
+        <p>Granted, all of this is part of the point, and that's a major reason why "Teenage Sex and Death at Camp Miasma" is so exasperating. Early in the film, Billy tells Kris that she's approaching her reboot of the in-film "Miasma" franchise "too academically." The audience instantly understands that this is Schoenbrun riffing on their own intellectually minded approach, and that Kris is a self-insert character for the movie's writer-director. Kris explains that she knows the studio hired her solely because she's <span class="anno">queer<sup class="anno-badge">注</sup><span class="anno-pop" hidden>酷儿，泛指非异性恋规范的身份与欲望；本片以酷儿视角重读类型片。</span></span>, as only a queer person could revamp an outdated, transphobic slasher franchise without Big Cancel Culture piping in. But what the Hollywood suits don't realize is that Kris has been a "Camp Miasma" obsessive since childhood. She's extremely interested in the ways problematic movies can be reclaimed by the real-life minority figures depicted in them, and what can be gleaned from studying these films' merits.</p>
+        <p>Kris calls the original "Camp Miasma" film her sexual awakening, but can't exactly put her finger on why. All she knows is that she's fascinated by a look Billy's character has in her eye during a sex scene, and that she hasn't been able to get it out of her mind for her whole life. She wants to explore her pleasure, but there's a mental block keeping her from doing so.</p>
+        <p>Here, Schoenbrun touches on a very real and very interesting shared experience within the trans community, remarking on the dissonance between embracing one part of yourself, but being at odds with another — in Kris' case, her queer identity versus her practiced sexuality. (This is made somewhat tenuous by casting a cis actor like Einbinder, but I digress.) When you work so hard to come to terms with who you are, and when there is so much sexual violence directed toward you in both real life and media, letting yourself be seen as a sexual creature can be a very frightening experience.</p>
+        <p>With Billy's help, Kris comes to understand that it's the final girl fantasy that turns her on. She wants to run through the woods, vulnerable and boobs a'bouncing. She craves the helplessness, Little Death's (sigh) phallic instrument pressed against her skin. She wants to give herself over to it, to turn her brain off and release herself into someone's control. But understanding the fantasy and accepting it are two different things, separated by a sea of unwarranted shame.</p>
+        <p>As was the case with Schoenbrun's previous two films, once a grand idea starts to take shape in unique and compelling ways, reality and fantasy must blur, forcing a new layer of subtext about "the media" as an alluring and edifying, yet potentially harmful, entity to emerge. Schoenbrun depicts extended sequences from the in-universe "Camp Miasma" movie, notably directed by Ray Blanchard, the real-life sexologist whose theories of autogynephilic sexuality claim that identification with a desired sex can make a person wish to be the desired sex.</p>
+        <p>If horror is "flesh and fluids," then the flesh of this movie is a body comprised of nebulous ideas. When sliced, loose metaphors and half-sketched allegories gush forth, fluids staining the viewer's clothes blood-red. The film's body is drained — an inanimate husk. Its lifeblood of ideas is now the audience's responsibility.</p>
+        <p>In short: The winking Blanchard reference supports Kris' shame about the "Miasma" movies causing her to see herself in an autogynephilic way — the heterosexual man's fantasy of a woman in peril. But worry not, even a viewer who doesn't know who Blanchard is can surmise this correlation to the bigger picture thanks to Schoenbrun quite literally spelling it out for us. While rewatching one of the "Miasma" sequels, Kris takes out a pen and paper, writes the word "DESIRE" in all caps, and underlines it twice.</p>
+        <p>It's clear that, with "Teenage Sex and Death at Camp Miasma," Schoenbrun seeks to marry their affection for absurd, often quite obvious ways that horror movies execute their themes with their own penchant for the intellectual and analytical. All that is great, and would conceivably make for a very great film — if there were any film at the core of all of these ideas. But the characterizations are too flimsy, the world only moderately textured. Narrative elements that could round out the film into something truly meaty are left on the floor in favor of more metaphors, like a pizza shop running out of sauce and throwing more cheese onto the pie, hoping a customer won't notice an integral piece is missing. Even the handful of beautiful, hand-painted practical backgrounds seem to be laden with implied allegory. Their semi-fantastical style almost recalls the works of Thomas Kinkade. Kinkade. Kink-aid. Billy's helping hand, aiding Kris' kinks. Little Death. Desire. It's all, frankly, a lot and not enough at all.</p>
+        <p>Early in the film, Billy refutes Kris' overcomplicated idea of horror films. "Horror is just flesh and fluids," Billy tells her. And if one were to assume everything here has deeper meaning, as I'd wager Schoenbrun is begging their audience to do, this is a perfect way to illustrate how "Teenage Sex and Death at Camp Miasma" stumbles. The flesh of this movie is its body, comprised of nebulous ideas. When that body is poked, prodded and sliced, loose metaphors and half-sketched allegories gush forth, fluids staining the viewer's clothes blood-red. The film's body is drained — an inanimate husk. Its lifeblood of ideas is now the audience's responsibility.</p>
+        <p>While some of these ideas may be profoundly relatable — and thus, personally meaningful — that doesn't make the observations or their executions within Schoenbrun's feeble film profound in and of themselves. Unlike most of Schoenbrun's diehard fans seem to think, a difference of opinion about art doesn't negate either person's feelings. But like its creator, Schoenbrun's film asserts that media can be integral to personal identity. "Teenage Sex and Death at Camp Miasma" encourages fans of the film to fire back at its detractors with "you didn't get it," even though the film is incredibly easy to understand. They want to protect Schoenbrun's film from the very analysis it's encouraging, the deep, granular kind that causes all that subtext to fall apart. The problem with boarding the train to true profundity and disembarking at "la petite mort" is that, if you linger there long enough, you start to forget that there's much more to life and movies than sex and death.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- ============ QUOTES ============ -->
+  <section class="quotes">
+    <h2>权威媒体短评（摘译）</h2>
+    <p style="color:#a99fb0;font-size:14px;margin-top:-8px;">以下来自 Metacritic / Rotten Tomatoes 聚合的权威媒体评分，按原文摘译，作为上文长篇评论的旁证与补充视角。</p>
+    <div class="qgrid">
+      <div class="qcard"><div class="q">"在性与电影上睿智、善意而俏皮，申布伦这部弹性、坦荡的影片，想要我们走出自己的脑子、享受这趟旅程。而当我们这样做时，一个由视觉快感与电影可能性构成的崭新世界，便在眼前展开。"</div><div class="src"><b>《视与听》Sight & Sound</b> · Blake Simons（2026.5.19）</div></div>
+      <div class="qcard"><div class="q">"把影片置于一种繁复与铺张的层级，足以与韦斯·安德森的《小行星城》和格蕾塔·葛韦格的《芭比》相提并论。"</div><div class="src"><b>《纽约客》The New Yorker</b> · Richard Brody</div></div>
+      <div class="qcard"><div class="q">"《瘴气营地的青春性事与死亡》总像在'用力过猛'的边缘摇摇欲坠——系列里那个头顶通风口的杀手，被刻意叫作'小死亡'——但申布伦对基调的把握令人愉悦，在情节剧、卡通式血腥致敬与全幅奇想之间来回looping。"</div><div class="src"><b>《纽约时报》The New York Times</b> · Alissa Wilkinson（影评人精选）</div></div>
+      <div class="qcard"><div class="q">"安德森在此的表演——一位 1990 年代尖叫女王化身 glamorous、古怪的隐士——堪称 sublime（极致），而她的搭档汉娜·爱宾德每一分钟都紧追不舍。"</div><div class="src"><b>《时代》Time</b> · Stephanie Zacharek</div></div>
+      <div class="qcard"><div class="q">"申布伦又一部即时生效的邪典经典。"</div><div class="src"><b>《广播时报》Radio Times</b> · Patrick Cremona（满分）</div></div>
+      <div class="qcard"><div class="q">"一部动人地私人的电影，却也道出了责任与欲望之间那无处不在的拉扯。"</div><div class="src"><b>The Playlist</b> · Rafaela Sales Ross（A）</div></div>
+      <div class="qcard"><div class="q">"当我们再次对自己的身体感到自在时，这些空间会发生什么？复活是否总得先经历某种死亡？"</div><div class="src"><b>TheWrap</b> · Zachary Lee（满分）</div></div>
+      <div class="qcard"><div class="q">"既是申布伦再显身手的最佳状态，也领我们走向令人惊喜的新方向。它同时是色情的、真诚的、傻气的、甜美的。"</div><div class="src"><b>IGN</b> · Chase Hutchinson（9/10）</div></div>
+      <div class="qcard"><div class="q">"挥霍着文化指涉与崭新想象，《瘴气营地的青春性事与死亡》是一场喜剧、谋杀、智识主义、性觉醒与酷儿的狂欢。"</div><div class="src"><b>The A.V. Club</b> · Luke Hicks（满分）</div></div>
+      <div class="qcard"><div class="q">"申布伦告诉我们，一切都是对重制的重制，但《瘴气营地》是一个全然独特、令人振奋的视野，既血淋淋，又美丽。"</div><div class="src"><b>《帝国》Empire</b></div></div>
+      <div class="qcard"><div class="q">"一部元恐怖喜剧，也是一则机敏绝顶的娱乐工业讽刺。但在更深处，在它湖底的那个洞里，藏着一场来之不易的性觉醒。"</div><div class="src"><b>Time Out</b> · Sophie Monks Kaufman（满分）</div></div>
+      <div class="qcard"><div class="q">"我们最爱的砍杀片常常边缘粗糙、有点失控、有点前后不一。而它们之中，极少有像这部这样狂野地好看。"</div><div class="src"><b>RogerEbert.com</b> · Brian Tallerico（4.5/5）</div></div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="method">
+    <h2>关于本辑</h2>
+    <p>本页汇编了英语世界对简·申布伦（Jane Schoenbrun）2026 年影片《瘴气营地的青春性事与死亡》（<i>Teenage Sex and Death at Camp Miasma</i>）的九篇评论全文译介，并附十二则权威媒体短评摘译。影片于第 79 届戛纳电影节"一种关注"单元开幕，获酷儿棕榈奖，烂番茄 94%（278 评）、Metacritic 89（48 评、零负评）。</p>
+    <p><b>选源标准：</b>兼顾"学术价值高、来源权威、立场多样、原汁原味"四项要求——</p>
+    <ul>
+      <li><b>学术/深度</b>：《电影之感知》(Senses of Cinema) 亚历山大·霍利迪的长篇论文；《当下事务》(Current Affairs) RS Benedict 的文化政治分析。</li>
+      <li><b>权威媒体</b>：《卫报》《综艺》《西雅图时报》《芝加哥读者》均为主流或专业影评阵地。</li>
+      <li><b>立场多样</b>：既有五星/四星级的狂热赞誉（卫报、西雅图时报），也有明确批评——Sounds of Cinema 指其"点子过载、在野心之重下塌垮"，《沙龙》批评其"在隐喻地狱中枯萎"。</li>
+      <li><b>原汁原味</b>：每篇均保留英文原文（点击"展开全部原文"或单篇"原文/对照"可对照阅读），译文由本助手据原文直译，未删改观点。</li>
+    </ul>
+    <p><b>使用提示：</b>顶部"阅读模式"可切换"译文优先 / 英文原文 / 中英对照"；"立场"筛选可按赞誉、学术/分析、批评查看；单篇右上角标签标明立场。Salon 一篇因官网反爬拦截仅呈摘录，已注明。</p>
+    <p style="color:#8a7f90;font-size:13px;">注：聚合评分与短评数据截至 2026 年 10 月；个别媒体评分随样本扩充可能有微调。</p>
+  </section>
+
+  <footer>
+    <p><b>主要资料来源（均含全文）：</b></p>
+    <p>
+      • The Guardian — Peter Bradshaw：<a href="https://www.theguardian.com/film/2026/may/14/teenage-sex-and-death-at-camp-miasma-review-seductive-gillian-anderson-fulfils-a-rapturous-slasher-fan-obsession">theguardian.com</a><br>
+      • Variety — Jessica Kiang：<a href="https://variety.com/2026/film/reviews/teenage-sex-and-death-at-camp-miasma-review-1236747126">variety.com</a><br>
+      • Senses of Cinema — Alexander Holiday：<a href="https://www.sensesofcinema.com/?p=53029">sensesofcinema.com</a><br>
+      • Current Affairs — RS Benedict：<a href="https://www.currentaffairs.org/news/teenage-sex-and-death-at-camp-miasma-as-meta-meta-slasher">currentaffairs.org</a><br>
+      • Autostraddle — Nic Anstett：<a href="https://autostraddle.com/teenage-sex-and-death-at-camp-miasma-and-the-inherent-sensuality-of-slashers">autostraddle.com</a><br>
+      • Chicago Reader — Shira Friedman-Parks：<a href="https://chicagoreader.com/film-tv/movie-review/review-teenage-sex-and-death-at-camp-miasma">chicagoreader.com</a><br>
+      • The Seattle Times — Chase Hutchinson：<a href="https://www.seattletimes.com/?p=19850543">seattletimes.com</a><br>
+      • Sounds of Cinema（#1115）：<a href="https://soundsofcinema.com/?p=14904">soundsofcinema.com</a><br>
+      • Salon — Coleman Spilde（全文）：<a href="https://www.salon.com/2026/08/26/teenage-sex-and-death-at-camp-miasma-withers-in-metaphor-hell/">salon.com</a>
+    </p>
+    <p style="margin-top:14px;color:#7a6f82;">本辑为评论翻译与汇编，版权归各原作者与出版方所有；中文译文仅供学习与参考之用。</p>
+  </footer>
+
+</div>
+
+<script>
+  const reviews = document.querySelectorAll('.review');
+
+  function applyMode(mode){
+    reviews.forEach(r=>{
+      r.classList.remove('view-zh','view-en','view-both');
+      r.classList.add('view-'+mode);
+      const det = r.querySelector('details.original');
+      if(det) det.open = (mode !== 'zh');
+      r.querySelectorAll('.toggles button').forEach(x=>x.classList.toggle('on', x.dataset.t===mode));
+    });
+    document.querySelectorAll('.controls .tab[data-view]').forEach(t=>t.classList.toggle('active', t.dataset.view===mode));
+  }
+
+  document.querySelectorAll('.controls .tab[data-view]').forEach(t=>{
+    t.addEventListener('click', ()=>applyMode(t.dataset.view));
+  });
+
+  document.querySelectorAll('.review .toggles button[data-t]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const r = b.closest('.review');
+      const mode = b.dataset.t;
+      r.classList.remove('view-zh','view-en','view-both');
+      r.classList.add('view-'+mode);
+      const det = r.querySelector('details.original');
+      if(det) det.open = (mode !== 'zh');
+      r.querySelectorAll('.toggles button').forEach(x=>x.classList.toggle('on', x===b));
+    });
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(f=>{
+    f.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));
+      f.classList.add('active');
+      const s = f.dataset.stance;
+      reviews.forEach(r=>{
+        r.classList.toggle('hide', !(s==='all' || r.dataset.stance===s));
+      });
+    });
+  });
+
+  let allOpen = false;
+  const toggleAllBtn = document.getElementById('toggleAll');
+  toggleAllBtn.addEventListener('click', function(){
+    allOpen = !allOpen;
+    document.querySelectorAll('.review details.original').forEach(d=>d.open = allOpen);
+    this.textContent = allOpen ? '收起全部原文' : '展开全部原文';
+  });
+
+  // ===== 专有名词注释：点击右上角角标弹出小框 =====
+  (function(){
+    var pop = document.getElementById('annoPop');
+    if(!pop){ pop = document.createElement('div'); pop.id='annoPop'; document.body.appendChild(pop); }
+    function closeAll(){
+      if(pop) pop.style.display='none';
+      var o = document.querySelector('.anno.open'); if(o) o.classList.remove('open');
+    }
+    function show(a){
+      var inner = a.querySelector('.anno-pop'); if(!inner) return;
+      pop.innerHTML = '<span class="at">注释 · Annotation</span>' + inner.innerHTML;
+      pop.style.display='block';
+      var r = a.getBoundingClientRect();
+      var pw = pop.offsetWidth, ph = pop.offsetHeight;
+      var left = r.left + r.width/2 - pw/2;
+      var top = r.bottom + 9;
+      var vw = window.innerWidth, vh = window.innerHeight;
+      if(left < 10) left = 10;
+      if(left + pw > vw - 10) left = vw - pw - 10;
+      if(top + ph > vh - 10) top = r.top - ph - 9;
+      if(top < 10) top = 10;
+      pop.style.left = left + 'px';
+      pop.style.top = top + 'px';
+      a.classList.add('open');
+    }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('.anno') : null;
+      if(a){
+        e.stopPropagation();
+        var was = a.classList.contains('open');
+        closeAll();
+        if(!was) show(a);
+      } else { closeAll(); }
+    });
+    window.addEventListener('scroll', closeAll, true);
+    window.addEventListener('resize', closeAll);
+  })();
+</script>
+</body>
+</html>
+
+
+
+
